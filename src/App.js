@@ -5,10 +5,13 @@ import TextField from './layout-components/text-field'
 import { formatName } from './layout-components/format-name'
 import styles from './app.module.css'
 
+import Room from './components/Room'
+import './App.css'
+
 const hash = window.location.hash
   .substring(1)
   .split('&')
-  .reduce(function(initial, item) {
+  .reduce(function (initial, item) {
     if (item) {
       const parts = item.split('=')
       initial[parts[0]] = decodeURIComponent(parts[1])
@@ -21,7 +24,7 @@ export default class App extends Component {
   state = {
     partyName: '',
     partyCode: '',
-    token: ''
+    token: '',
   }
 
   get partyUrl() {
@@ -61,7 +64,7 @@ export default class App extends Component {
     return login_string
   }
 
-  onPartyNameChange = partyName =>
+  onPartyNameChange = (partyName) =>
     this.setState({ partyName: formatName(partyName) })
 
   componentDidMount() {
@@ -70,7 +73,7 @@ export default class App extends Component {
     console.log('token= ' + _token)
     if (_token) {
       this.setState({
-        token: _token
+        token: _token,
       })
     }
   }
@@ -103,13 +106,7 @@ export default class App extends Component {
       )
     } else {
       //after user login and become the room host
-      return (
-        <div>
-          <div>In Room host mode</div>
-          <p>The token is = </p>
-          <p>{this.state.token}</p>
-        </div>
-      )
+      return <Room token={this.state.token} />
     }
   }
 }
