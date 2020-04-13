@@ -56,7 +56,7 @@ const Search = ({ token }) => {
 
   const searchItem = async (token) => {
     // let searchString = `https://api.spotify.com/v1/search?q=name:${keyword}&type=track,artist,album&limit=50`
-    let searchString = `https://api.spotify.com/v1/search?q=name:${keyword}&type=track&limit=50`
+    let searchString = `https://api.spotify.com/v1/search?q=${keyword}&type=track&limit=20`
     const res = await axios.get(searchString, {
       headers: {
         Authorization: 'Bearer ' + token,
