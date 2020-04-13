@@ -1,0 +1,902 @@
+{
+    "tracks": {
+      "href": "https://api.spotify.com/v1/search?query=pudhupettai&type=track&market=US&offset=5&limit=10",
+      "items": [
+        {
+          "album": {
+            "album_type": "album",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+                },
+                "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+                "id": "6AiX12wXdXFoGJ2vk8zBjy",
+                "name": "Yuvan Shankar Raja",
+                "type": "artist",
+                "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/6S7qVw5BwuzC2Zo7xVNFE9"
+            },
+            "href": "https://api.spotify.com/v1/albums/6S7qVw5BwuzC2Zo7xVNFE9",
+            "id": "6S7qVw5BwuzC2Zo7xVNFE9",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b27327fe3ef6873c00135a49d7fb",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e0227fe3ef6873c00135a49d7fb",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d0000485127fe3ef6873c00135a49d7fb",
+                "width": 64
+              }
+            ],
+            "name": "Pudhupettai",
+            "release_date": "2005-12-15",
+            "release_date_precision": "day",
+            "total_tracks": 9,
+            "type": "album",
+            "uri": "spotify:album:6S7qVw5BwuzC2Zo7xVNFE9"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/11PIHAhH0HI8SCdjhJ5zyA"
+              },
+              "href": "https://api.spotify.com/v1/artists/11PIHAhH0HI8SCdjhJ5zyA",
+              "id": "11PIHAhH0HI8SCdjhJ5zyA",
+              "name": "Tanvi Shah",
+              "type": "artist",
+              "uri": "spotify:artist:11PIHAhH0HI8SCdjhJ5zyA"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0aUQnP4HhUQXcurZl9GJIA"
+              },
+              "href": "https://api.spotify.com/v1/artists/0aUQnP4HhUQXcurZl9GJIA",
+              "id": "0aUQnP4HhUQXcurZl9GJIA",
+              "name": "Vijay Yesudas",
+              "type": "artist",
+              "uri": "spotify:artist:0aUQnP4HhUQXcurZl9GJIA"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 318000,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "GBSGZ0500073"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/6MwmCJgyD6Rn752aY50lMV"
+          },
+          "href": "https://api.spotify.com/v1/tracks/6MwmCJgyD6Rn752aY50lMV",
+          "id": "6MwmCJgyD6Rn752aY50lMV",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Pul Pesum",
+          "popularity": 14,
+          "preview_url": "https://p.scdn.co/mp3-preview/ef033e8442882b729885cfc92bcac888b3b498a0?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 7,
+          "type": "track",
+          "uri": "spotify:track:6MwmCJgyD6Rn752aY50lMV"
+        },
+        {
+          "album": {
+            "album_type": "album",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+                },
+                "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+                "id": "6AiX12wXdXFoGJ2vk8zBjy",
+                "name": "Yuvan Shankar Raja",
+                "type": "artist",
+                "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/6S7qVw5BwuzC2Zo7xVNFE9"
+            },
+            "href": "https://api.spotify.com/v1/albums/6S7qVw5BwuzC2Zo7xVNFE9",
+            "id": "6S7qVw5BwuzC2Zo7xVNFE9",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b27327fe3ef6873c00135a49d7fb",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e0227fe3ef6873c00135a49d7fb",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d0000485127fe3ef6873c00135a49d7fb",
+                "width": 64
+              }
+            ],
+            "name": "Pudhupettai",
+            "release_date": "2005-12-15",
+            "release_date_precision": "day",
+            "total_tracks": 9,
+            "type": "album",
+            "uri": "spotify:album:6S7qVw5BwuzC2Zo7xVNFE9"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+              },
+              "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+              "id": "6AiX12wXdXFoGJ2vk8zBjy",
+              "name": "Yuvan Shankar Raja",
+              "type": "artist",
+              "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 169146,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "GBSGZ0500072"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/2sdlE4cgeOpbutRoa02zTz"
+          },
+          "href": "https://api.spotify.com/v1/tracks/2sdlE4cgeOpbutRoa02zTz",
+          "id": "2sdlE4cgeOpbutRoa02zTz",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Selling Dope: \"The Beginning\"",
+          "popularity": 15,
+          "preview_url": "https://p.scdn.co/mp3-preview/a51bf9503cf1548ca240c05ad299645dbdbb5de9?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 4,
+          "type": "track",
+          "uri": "spotify:track:2sdlE4cgeOpbutRoa02zTz"
+        },
+        {
+          "album": {
+            "album_type": "album",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+                },
+                "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+                "id": "6AiX12wXdXFoGJ2vk8zBjy",
+                "name": "Yuvan Shankar Raja",
+                "type": "artist",
+                "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/4rBZPKoNnmnpZSz1IOOSrl"
+            },
+            "href": "https://api.spotify.com/v1/albums/4rBZPKoNnmnpZSz1IOOSrl",
+            "id": "4rBZPKoNnmnpZSz1IOOSrl",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b2732268e182c00552c7e909b389",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e022268e182c00552c7e909b389",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d000048512268e182c00552c7e909b389",
+                "width": 64
+              }
+            ],
+            "name": "Pudhupettai (Original Motion Picture Soundtrack)",
+            "release_date": "2016-11-07",
+            "release_date_precision": "day",
+            "total_tracks": 10,
+            "type": "album",
+            "uri": "spotify:album:4rBZPKoNnmnpZSz1IOOSrl"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+              },
+              "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+              "id": "6AiX12wXdXFoGJ2vk8zBjy",
+              "name": "Yuvan Shankar Raja",
+              "type": "artist",
+              "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0aUQnP4HhUQXcurZl9GJIA"
+              },
+              "href": "https://api.spotify.com/v1/artists/0aUQnP4HhUQXcurZl9GJIA",
+              "id": "0aUQnP4HhUQXcurZl9GJIA",
+              "name": "Vijay Yesudas",
+              "type": "artist",
+              "uri": "spotify:artist:0aUQnP4HhUQXcurZl9GJIA"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/11PIHAhH0HI8SCdjhJ5zyA"
+              },
+              "href": "https://api.spotify.com/v1/artists/11PIHAhH0HI8SCdjhJ5zyA",
+              "id": "11PIHAhH0HI8SCdjhJ5zyA",
+              "name": "Tanvi Shah",
+              "type": "artist",
+              "uri": "spotify:artist:11PIHAhH0HI8SCdjhJ5zyA"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 326320,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "MYVS11601774"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/4vsRJ82oCIbgZ7hFQ17nOX"
+          },
+          "href": "https://api.spotify.com/v1/tracks/4vsRJ82oCIbgZ7hFQ17nOX",
+          "id": "4vsRJ82oCIbgZ7hFQ17nOX",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Pulpesum Poo Pesum",
+          "popularity": 25,
+          "preview_url": "https://p.scdn.co/mp3-preview/9edafc79109994151c8cfaf8dfa456d3ce96359e?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 7,
+          "type": "track",
+          "uri": "spotify:track:4vsRJ82oCIbgZ7hFQ17nOX"
+        },
+        {
+          "album": {
+            "album_type": "album",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+                },
+                "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+                "id": "6AiX12wXdXFoGJ2vk8zBjy",
+                "name": "Yuvan Shankar Raja",
+                "type": "artist",
+                "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/6S7qVw5BwuzC2Zo7xVNFE9"
+            },
+            "href": "https://api.spotify.com/v1/albums/6S7qVw5BwuzC2Zo7xVNFE9",
+            "id": "6S7qVw5BwuzC2Zo7xVNFE9",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b27327fe3ef6873c00135a49d7fb",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e0227fe3ef6873c00135a49d7fb",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d0000485127fe3ef6873c00135a49d7fb",
+                "width": 64
+              }
+            ],
+            "name": "Pudhupettai",
+            "release_date": "2005-12-15",
+            "release_date_precision": "day",
+            "total_tracks": 9,
+            "type": "album",
+            "uri": "spotify:album:6S7qVw5BwuzC2Zo7xVNFE9"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+              },
+              "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+              "id": "6AiX12wXdXFoGJ2vk8zBjy",
+              "name": "Yuvan Shankar Raja",
+              "type": "artist",
+              "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/68gFH44DGRyyJqbtrpWK86"
+              },
+              "href": "https://api.spotify.com/v1/artists/68gFH44DGRyyJqbtrpWK86",
+              "id": "68gFH44DGRyyJqbtrpWK86",
+              "name": "DJ Rafiq",
+              "type": "artist",
+              "uri": "spotify:artist:68gFH44DGRyyJqbtrpWK86"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 319000,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "GBSGZ0500075"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/7L5fuuGg4eD6x4ljXtqmdO"
+          },
+          "href": "https://api.spotify.com/v1/tracks/7L5fuuGg4eD6x4ljXtqmdO",
+          "id": "7L5fuuGg4eD6x4ljXtqmdO",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Oru Naalum (Remix)",
+          "popularity": 12,
+          "preview_url": "https://p.scdn.co/mp3-preview/9208b92746a04f392eed47c961d697f2595af7ac?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 9,
+          "type": "track",
+          "uri": "spotify:track:7L5fuuGg4eD6x4ljXtqmdO"
+        },
+        {
+          "album": {
+            "album_type": "album",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+                },
+                "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+                "id": "6AiX12wXdXFoGJ2vk8zBjy",
+                "name": "Yuvan Shankar Raja",
+                "type": "artist",
+                "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/6S7qVw5BwuzC2Zo7xVNFE9"
+            },
+            "href": "https://api.spotify.com/v1/albums/6S7qVw5BwuzC2Zo7xVNFE9",
+            "id": "6S7qVw5BwuzC2Zo7xVNFE9",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b27327fe3ef6873c00135a49d7fb",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e0227fe3ef6873c00135a49d7fb",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d0000485127fe3ef6873c00135a49d7fb",
+                "width": 64
+              }
+            ],
+            "name": "Pudhupettai",
+            "release_date": "2005-12-15",
+            "release_date_precision": "day",
+            "total_tracks": 9,
+            "type": "album",
+            "uri": "spotify:album:6S7qVw5BwuzC2Zo7xVNFE9"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/01GWDNuDnzmeMbeLwzRsmY"
+              },
+              "href": "https://api.spotify.com/v1/artists/01GWDNuDnzmeMbeLwzRsmY",
+              "id": "01GWDNuDnzmeMbeLwzRsmY",
+              "name": "Kamalhasan",
+              "type": "artist",
+              "uri": "spotify:artist:01GWDNuDnzmeMbeLwzRsmY"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 297413,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "GBSGZ0500068"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/0BnSPtc7tGSvH0S51QW7Jz"
+          },
+          "href": "https://api.spotify.com/v1/tracks/0BnSPtc7tGSvH0S51QW7Jz",
+          "id": "0BnSPtc7tGSvH0S51QW7Jz",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Neruppu",
+          "popularity": 12,
+          "preview_url": "https://p.scdn.co/mp3-preview/05614e7e48baed5da6a5d2f6acdf3cd1f2341098?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 2,
+          "type": "track",
+          "uri": "spotify:track:0BnSPtc7tGSvH0S51QW7Jz"
+        },
+        {
+          "album": {
+            "album_type": "album",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+                },
+                "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+                "id": "6AiX12wXdXFoGJ2vk8zBjy",
+                "name": "Yuvan Shankar Raja",
+                "type": "artist",
+                "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/6S7qVw5BwuzC2Zo7xVNFE9"
+            },
+            "href": "https://api.spotify.com/v1/albums/6S7qVw5BwuzC2Zo7xVNFE9",
+            "id": "6S7qVw5BwuzC2Zo7xVNFE9",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b27327fe3ef6873c00135a49d7fb",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e0227fe3ef6873c00135a49d7fb",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d0000485127fe3ef6873c00135a49d7fb",
+                "width": 64
+              }
+            ],
+            "name": "Pudhupettai",
+            "release_date": "2005-12-15",
+            "release_date_precision": "day",
+            "total_tracks": 9,
+            "type": "album",
+            "uri": "spotify:album:6S7qVw5BwuzC2Zo7xVNFE9"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+              },
+              "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+              "id": "6AiX12wXdXFoGJ2vk8zBjy",
+              "name": "Yuvan Shankar Raja",
+              "type": "artist",
+              "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 193240,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "GBSGZ0500070"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/5xWNXWMyqt1B5lldpwQHvE"
+          },
+          "href": "https://api.spotify.com/v1/tracks/5xWNXWMyqt1B5lldpwQHvE",
+          "id": "5xWNXWMyqt1B5lldpwQHvE",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Pudhupettai Main Theme: \"Survival Of The Fittest\"",
+          "popularity": 9,
+          "preview_url": "https://p.scdn.co/mp3-preview/4883f432ab69589c32c8d63a0679bc5c2aa88480?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 1,
+          "type": "track",
+          "uri": "spotify:track:5xWNXWMyqt1B5lldpwQHvE"
+        },
+        {
+          "album": {
+            "album_type": "album",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+                },
+                "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+                "id": "6AiX12wXdXFoGJ2vk8zBjy",
+                "name": "Yuvan Shankar Raja",
+                "type": "artist",
+                "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/4rBZPKoNnmnpZSz1IOOSrl"
+            },
+            "href": "https://api.spotify.com/v1/albums/4rBZPKoNnmnpZSz1IOOSrl",
+            "id": "4rBZPKoNnmnpZSz1IOOSrl",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b2732268e182c00552c7e909b389",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e022268e182c00552c7e909b389",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d000048512268e182c00552c7e909b389",
+                "width": 64
+              }
+            ],
+            "name": "Pudhupettai (Original Motion Picture Soundtrack)",
+            "release_date": "2016-11-07",
+            "release_date_precision": "day",
+            "total_tracks": 10,
+            "type": "album",
+            "uri": "spotify:album:4rBZPKoNnmnpZSz1IOOSrl"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+              },
+              "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+              "id": "6AiX12wXdXFoGJ2vk8zBjy",
+              "name": "Yuvan Shankar Raja",
+              "type": "artist",
+              "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2F3KtUVtrt2GLjcl6pB4cz"
+              },
+              "href": "https://api.spotify.com/v1/artists/2F3KtUVtrt2GLjcl6pB4cz",
+              "id": "2F3KtUVtrt2GLjcl6pB4cz",
+              "name": "Dhanush",
+              "type": "artist",
+              "uri": "spotify:artist:2F3KtUVtrt2GLjcl6pB4cz"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4GxNKj50amLne9azxcrqK2"
+              },
+              "href": "https://api.spotify.com/v1/artists/4GxNKj50amLne9azxcrqK2",
+              "id": "4GxNKj50amLne9azxcrqK2",
+              "name": "Premgi Amaren",
+              "type": "artist",
+              "uri": "spotify:artist:4GxNKj50amLne9azxcrqK2"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 319013,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "MYVS11601770"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/3Lal1ZKn02Fd7CG7SP4mge"
+          },
+          "href": "https://api.spotify.com/v1/tracks/3Lal1ZKn02Fd7CG7SP4mge",
+          "id": "3Lal1ZKn02Fd7CG7SP4mge",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Enga Yeriya",
+          "popularity": 26,
+          "preview_url": "https://p.scdn.co/mp3-preview/37af8c23f0b21e9604eb4e8a483839806120bf9d?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 3,
+          "type": "track",
+          "uri": "spotify:track:3Lal1ZKn02Fd7CG7SP4mge"
+        },
+        {
+          "album": {
+            "album_type": "compilation",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/2F3KtUVtrt2GLjcl6pB4cz"
+                },
+                "href": "https://api.spotify.com/v1/artists/2F3KtUVtrt2GLjcl6pB4cz",
+                "id": "2F3KtUVtrt2GLjcl6pB4cz",
+                "name": "Dhanush",
+                "type": "artist",
+                "uri": "spotify:artist:2F3KtUVtrt2GLjcl6pB4cz"
+              },
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/77YvCBWe0tTLygpgSJsdOH"
+                },
+                "href": "https://api.spotify.com/v1/artists/77YvCBWe0tTLygpgSJsdOH",
+                "id": "77YvCBWe0tTLygpgSJsdOH",
+                "name": "Dhee",
+                "type": "artist",
+                "uri": "spotify:artist:77YvCBWe0tTLygpgSJsdOH"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/58pDHgiIXAdgKt1iA3riNM"
+            },
+            "href": "https://api.spotify.com/v1/albums/58pDHgiIXAdgKt1iA3riNM",
+            "id": "58pDHgiIXAdgKt1iA3riNM",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b273d6d9735485190d97ee35184e",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e02d6d9735485190d97ee35184e",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d00004851d6d9735485190d97ee35184e",
+                "width": 64
+              }
+            ],
+            "name": "Best Of Dhanush",
+            "release_date": "2019-07-04",
+            "release_date_precision": "day",
+            "total_tracks": 25,
+            "type": "album",
+            "uri": "spotify:album:58pDHgiIXAdgKt1iA3riNM"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2F3KtUVtrt2GLjcl6pB4cz"
+              },
+              "href": "https://api.spotify.com/v1/artists/2F3KtUVtrt2GLjcl6pB4cz",
+              "id": "2F3KtUVtrt2GLjcl6pB4cz",
+              "name": "Dhanush",
+              "type": "artist",
+              "uri": "spotify:artist:2F3KtUVtrt2GLjcl6pB4cz"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4GxNKj50amLne9azxcrqK2"
+              },
+              "href": "https://api.spotify.com/v1/artists/4GxNKj50amLne9azxcrqK2",
+              "id": "4GxNKj50amLne9azxcrqK2",
+              "name": "Premgi Amaren",
+              "type": "artist",
+              "uri": "spotify:artist:4GxNKj50amLne9azxcrqK2"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+              },
+              "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+              "id": "6AiX12wXdXFoGJ2vk8zBjy",
+              "name": "Yuvan Shankar Raja",
+              "type": "artist",
+              "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 319393,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "IND291600736"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/1pGQaY0mVp0bnOObT1Jzt7"
+          },
+          "href": "https://api.spotify.com/v1/tracks/1pGQaY0mVp0bnOObT1Jzt7",
+          "id": "1pGQaY0mVp0bnOObT1Jzt7",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Enga Yeriya (From Pudhupettai)",
+          "popularity": 11,
+          "preview_url": "https://p.scdn.co/mp3-preview/12c03038fdfa3b849ce2bfe6e50dcd1ba4da147b?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 6,
+          "type": "track",
+          "uri": "spotify:track:1pGQaY0mVp0bnOObT1Jzt7"
+        },
+        {
+          "album": {
+            "album_type": "album",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+                },
+                "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+                "id": "6AiX12wXdXFoGJ2vk8zBjy",
+                "name": "Yuvan Shankar Raja",
+                "type": "artist",
+                "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/36uw4eCmABVlfFGTxzx0kS"
+            },
+            "href": "https://api.spotify.com/v1/albums/36uw4eCmABVlfFGTxzx0kS",
+            "id": "36uw4eCmABVlfFGTxzx0kS",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b2732a9066f0328b6a53d40e992c",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e022a9066f0328b6a53d40e992c",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d000048512a9066f0328b6a53d40e992c",
+                "width": 64
+              }
+            ],
+            "name": "Yuvan Forever",
+            "release_date": "2019-08-23",
+            "release_date_precision": "day",
+            "total_tracks": 20,
+            "type": "album",
+            "uri": "spotify:album:36uw4eCmABVlfFGTxzx0kS"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6AiX12wXdXFoGJ2vk8zBjy"
+              },
+              "href": "https://api.spotify.com/v1/artists/6AiX12wXdXFoGJ2vk8zBjy",
+              "id": "6AiX12wXdXFoGJ2vk8zBjy",
+              "name": "Yuvan Shankar Raja",
+              "type": "artist",
+              "uri": "spotify:artist:6AiX12wXdXFoGJ2vk8zBjy"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 385353,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "IND291600738"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/5ULNZaQ0AXiSHlPecFBHbn"
+          },
+          "href": "https://api.spotify.com/v1/tracks/5ULNZaQ0AXiSHlPecFBHbn",
+          "id": "5ULNZaQ0AXiSHlPecFBHbn",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Oru Naalil (From \"Pudhupettai\")",
+          "popularity": 16,
+          "preview_url": "https://p.scdn.co/mp3-preview/792b1b67ba03740da2eb48067314d1dff28c5f91?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 9,
+          "type": "track",
+          "uri": "spotify:track:5ULNZaQ0AXiSHlPecFBHbn"
+        },
+        {
+          "album": {
+            "album_type": "compilation",
+            "artists": [
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/2F3KtUVtrt2GLjcl6pB4cz"
+                },
+                "href": "https://api.spotify.com/v1/artists/2F3KtUVtrt2GLjcl6pB4cz",
+                "id": "2F3KtUVtrt2GLjcl6pB4cz",
+                "name": "Dhanush",
+                "type": "artist",
+                "uri": "spotify:artist:2F3KtUVtrt2GLjcl6pB4cz"
+              },
+              {
+                "external_urls": {
+                  "spotify": "https://open.spotify.com/artist/77YvCBWe0tTLygpgSJsdOH"
+                },
+                "href": "https://api.spotify.com/v1/artists/77YvCBWe0tTLygpgSJsdOH",
+                "id": "77YvCBWe0tTLygpgSJsdOH",
+                "name": "Dhee",
+                "type": "artist",
+                "uri": "spotify:artist:77YvCBWe0tTLygpgSJsdOH"
+              }
+            ],
+            "external_urls": {
+              "spotify": "https://open.spotify.com/album/58pDHgiIXAdgKt1iA3riNM"
+            },
+            "href": "https://api.spotify.com/v1/albums/58pDHgiIXAdgKt1iA3riNM",
+            "id": "58pDHgiIXAdgKt1iA3riNM",
+            "images": [
+              {
+                "height": 640,
+                "url": "https://i.scdn.co/image/ab67616d0000b273d6d9735485190d97ee35184e",
+                "width": 640
+              },
+              {
+                "height": 300,
+                "url": "https://i.scdn.co/image/ab67616d00001e02d6d9735485190d97ee35184e",
+                "width": 300
+              },
+              {
+                "height": 64,
+                "url": "https://i.scdn.co/image/ab67616d00004851d6d9735485190d97ee35184e",
+                "width": 64
+              }
+            ],
+            "name": "Best Of Dhanush",
+            "release_date": "2019-07-04",
+            "release_date_precision": "day",
+            "total_tracks": 25,
+            "type": "album",
+            "uri": "spotify:album:58pDHgiIXAdgKt1iA3riNM"
+          },
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0l7Hp4AdfnipbEVGqDxZ4R"
+              },
+              "href": "https://api.spotify.com/v1/artists/0l7Hp4AdfnipbEVGqDxZ4R",
+              "id": "0l7Hp4AdfnipbEVGqDxZ4R",
+              "name": "Narayan",
+              "type": "artist",
+              "uri": "spotify:artist:0l7Hp4AdfnipbEVGqDxZ4R"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1SzGnVjEeyrC0zoHcQPsV0"
+              },
+              "href": "https://api.spotify.com/v1/artists/1SzGnVjEeyrC0zoHcQPsV0",
+              "id": "1SzGnVjEeyrC0zoHcQPsV0",
+              "name": "Naveen Mathav",
+              "type": "artist",
+              "uri": "spotify:artist:1SzGnVjEeyrC0zoHcQPsV0"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7zFlr6Y537SdALqy0Xfvth"
+              },
+              "href": "https://api.spotify.com/v1/artists/7zFlr6Y537SdALqy0Xfvth",
+              "id": "7zFlr6Y537SdALqy0Xfvth",
+              "name": "Ranjith",
+              "type": "artist",
+              "uri": "spotify:artist:7zFlr6Y537SdALqy0Xfvth"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6HvZ40x8AkcVDOGJckGsPK"
+              },
+              "href": "https://api.spotify.com/v1/artists/6HvZ40x8AkcVDOGJckGsPK",
+              "id": "6HvZ40x8AkcVDOGJckGsPK",
+              "name": "Vasu",
+              "type": "artist",
+              "uri": "spotify:artist:6HvZ40x8AkcVDOGJckGsPK"
+            }
+          ],
+          "disc_number": 1,
+          "duration_ms": 208373,
+          "explicit": false,
+          "external_ids": {
+            "isrc": "IND291600741"
+          },
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/2Cae0qimM4MzdpMthK5f8b"
+          },
+          "href": "https://api.spotify.com/v1/tracks/2Cae0qimM4MzdpMthK5f8b",
+          "id": "2Cae0qimM4MzdpMthK5f8b",
+          "is_local": false,
+          "is_playable": true,
+          "name": "Varriyaa - Night Life (From Pudhupettai)",
+          "popularity": 14,
+          "preview_url": "https://p.scdn.co/mp3-preview/7ed580ff8bb632bf69271a43e66bd741e3eaf661?cid=774b29d4f13844c495f206cafdad9c86",
+          "track_number": 5,
+          "type": "track",
+          "uri": "spotify:track:2Cae0qimM4MzdpMthK5f8b"
+        }
+      ],
+      "limit": 10,
+      "next": "https://api.spotify.com/v1/search?query=pudhupettai&type=track&market=US&offset=15&limit=10",
+      "offset": 5,
+      "previous": "https://api.spotify.com/v1/search?query=pudhupettai&type=track&market=US&offset=0&limit=10",
+      "total": 23
+    }
+  }

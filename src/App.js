@@ -4,6 +4,7 @@ import { ExternalLinkButton } from './layout-components/button';
 import TextField from './layout-components/text-field';
 import { formatName } from './layout-components/format-name';
 import styles from './app.module.css';
+import Room from './Components/Room/Room';
 
 export default class App extends Component {
   state = {
@@ -50,6 +51,7 @@ export default class App extends Component {
             Create a party
           </ExternalLinkButton>
         </div>
+        {/* <Room/> */}
       </div>
     );
   }
