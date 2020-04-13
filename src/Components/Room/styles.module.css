@@ -1,0 +1,26 @@
+.details,
+.songs {
+  border: 2px black solid;
+}
+
+.details {
+  max-height: 30%;
+}
+
+.song-input {
+  max-width: 100%;
+  width: 100%;
+}
+
+.Main{
+  background-color: antiquewhite;
+  
+}
+
+#add{
+  display: inline;
+}
+
+.activity{
+  padding-top: 20%;
+}
