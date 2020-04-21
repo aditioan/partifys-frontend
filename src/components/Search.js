@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import TrackItem from './TrackItem'
 
-const Search = ({ token }) => {
+const Search = ({ token, addToPlaylist }) => {
   const [keyword, setKeyword] = useState('')
   const [tracks, setTracks] = useState({})
   const [pagination, setPagination] = useState({
@@ -29,7 +29,7 @@ const Search = ({ token }) => {
           Authorization: 'Bearer ' + token,
         },
       })
-      console.log(res)
+      //console.log(res)
       setTracks(res.data.tracks)
       setPagination({
         previous: res.data.tracks.previous,
@@ -45,7 +45,7 @@ const Search = ({ token }) => {
           Authorization: 'Bearer ' + token,
         },
       })
-      console.log(res)
+      //console.log(res)
       setTracks(res.data.tracks)
       setPagination({
         previous: res.data.tracks.previous,
@@ -62,7 +62,7 @@ const Search = ({ token }) => {
         Authorization: 'Bearer ' + token,
       },
     })
-    console.log(res)
+    //console.log(res)
     setTracks(res.data.tracks)
     setPagination({
       previous: res.data.tracks.previous,
@@ -97,7 +97,12 @@ const Search = ({ token }) => {
       {JSON.stringify(tracks) !== '{}' && tracks.items.length > 0 && (
         <div style={tracksStyle}>
           {tracks.items.map((item) => (
-            <TrackItem key={item.id} track={item} token={token} />
+            <TrackItem
+              key={item.id}
+              track={item}
+              token={token}
+              addToPlaylist={addToPlaylist}
+            />
           ))}
         </div>
       )}

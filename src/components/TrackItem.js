@@ -1,6 +1,7 @@
 import React from 'react'
 
-const TrackItem = ({ track }) => {
+const TrackItem = ({ track, addToPlaylist }) => {
+  //console.log(track)
   return (
     <div className="card">
       <img
@@ -16,9 +17,9 @@ const TrackItem = ({ track }) => {
       <p>album: {track.album.name}</p>
       <button
         className="btn btn-success btn-sm my-1"
-        // onClick={() => {
-        //   add(track.uri)
-        // }}
+        onClick={() => {
+          addToPlaylist(track.uri)
+        }}
       >
         add to playlist
       </button>
