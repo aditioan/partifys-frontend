@@ -16,23 +16,24 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 
-const hash = window.location.hash
-  .substring(1)
-  .split('&')
-  .reduce(function (initial, item) {
-    if (item) {
-      const parts = item.split('=')
-      initial[parts[0]] = decodeURIComponent(parts[1])
-    }
-    return initial
-  }, {})
-window.location.hash = ''
+// const hash = window.location.hash
+//   .substring(1)
+//   .split('&')
+//   .reduce(function (initial, item) {
+//     if (item) {
+//       const parts = item.split('=')
+//       initial[parts[0]] = decodeURIComponent(parts[1])
+//     }
+//     return initial
+//   }, {})
+// window.location.hash = ''
 
 export default class App extends Component {
   state = {
     partyName: '',
     partyCode: '',
     token: '',
+    rtoken: '',
     joinCode: '',
     //host: true,
     playlistId: '',
@@ -62,12 +63,13 @@ export default class App extends Component {
 
     const login_string =
       'https://accounts.spotify.com/authorize' +
-      '?response_type=token' +
+      '?response_type=code' +
       '&client_id=' +
       client_id +
       (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
       '&redirect_uri=' +
-      encodeURIComponent(redirect_uri)
+      encodeURIComponent(redirect_uri) +
+      '&show_dialog=true'
     //Note:
     //if you don't want to show the confirm dialog page all the time
     //get rid of the "+&'show_dialog=true" part
@@ -76,33 +78,98 @@ export default class App extends Component {
     return login_string
   }
 
+  getHashParams() {
+    var hashParams = {}
+    var e,
+      r = /([^&;=]+)=?([^&;]*)/g,
+      q = window.location.hash.substring(1)
+    while ((e = r.exec(q))) {
+      hashParams[e[1]] = decodeURIComponent(e[2])
+    }
+    //console.log('harshParams')
+    //console.log(hashParams)
+    return hashParams
+  }
+
   onPartyNameChange = (partyName) =>
     this.setState({ partyName: formatName(partyName) })
 
   componentDidMount() {
     // Set token
-    let _token = hash.access_token
-    console.log('token= ' + _token)
-    if (_token) {
-      this.setState({
-        token: _token,
-      })
+    // let _token = hash.access_token
+    // console.log('token= ' + _token)
+    // if (_token) {
+    //   this.setState({
+    //     token: _token,
+    //   })
+    // }
+
+    //var params = this.getHashParams()
+    const params = new URLSearchParams(window.location.search)
+
+    if (params.has('error')) {
+      console.log('There was an error during the authentication')
     }
 
-    if (_token) {
-      //console.log('I am here!!!!')
+    if (params.has('code')) {
       axios
-        .post('http://localhost:3001/room', {
-          token: _token,
-        })
+        .get(`http://localhost:3001/callback/?code=${params.get('code')}`)
         .then((res) => {
-          //console.log(res.data.roomNumber)
-          this.setState({
-            partyCode: res.data.roomNumber,
-            playlistId: res.data.playlist_id,
-          })
+          //console.log(res.data)
+          const error = res.data.error
+          if (error) {
+            console.log(error)
+          } else {
+            const access_token = res.data.access_token
+            const refresh_token = res.data.refresh_token
+
+            axios
+              .post('http://localhost:3001/room', {
+                token: access_token,
+              })
+              .then((res) => {
+                //console.log(res.data.roomNumber)
+
+                this.setState({
+                  token: access_token,
+                  rtoken: refresh_token,
+                  partyCode: res.data.roomNumber,
+                  playlistId: res.data.playlist_id,
+                })
+              })
+          }
         })
     }
+
+    // var access_token = params.access_token
+    // var refresh_token = params.refresh_token
+    // var error = params.error
+
+    // if (error) {
+    //   console.log('There was an error during the authentication')
+    // } else {
+    //   if (access_token) {
+    //     this.setState({
+    //       token: access_token,
+    //       rtoken: refresh_token,
+    //     })
+    //   }
+    // }
+
+    // if (access_token) {
+    //   //console.log('I am here!!!!')
+    //   axios
+    //     .post('http://localhost:3001/room', {
+    //       token: access_token,
+    //     })
+    //     .then((res) => {
+    //       //console.log(res.data.roomNumber)
+    //       this.setState({
+    //         partyCode: res.data.roomNumber,
+    //         playlistId: res.data.playlist_id,
+    //       })
+    //     })
+    // }
   }
 
   get createRoom() {
@@ -121,6 +188,12 @@ export default class App extends Component {
     this.setState({
       joinCode: e.target.value,
     })
+  }
+
+  onCreateParty = async (e) => {
+    e.preventDefault()
+    const res = axios.get('http://localhost:3001/create_party')
+    console.log(res.data)
   }
 
   onJoin = (e) => {
@@ -145,6 +218,7 @@ export default class App extends Component {
   render() {
     if (
       this.state.partyCode !== '' &&
+      this.state.rtoken !== '' &&
       this.state.token !== '' &&
       this.state.playlistId !== ''
     ) {
@@ -152,6 +226,7 @@ export default class App extends Component {
         <Provider store={store}>
           <Room
             token={this.state.token}
+            rtoekn={this.state.token}
             room={this.state.partyCode}
             playlistId={this.state.playlistId}
           />
