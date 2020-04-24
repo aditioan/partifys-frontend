@@ -3,9 +3,7 @@ import { ExternalLinkButton } from './layout-components/button'
 import TextField from './layout-components/text-field'
 import { formatName } from './layout-components/format-name'
 
-import 'materialize-css/dist/css/materialize.min.css'
-import M from 'materialize-css/dist/js/materialize.min.js'
-//import styles from './app.module.css'
+import styles from './app.module.css'
 
 import axios from 'axios'
 
