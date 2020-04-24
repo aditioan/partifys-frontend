@@ -3,26 +3,26 @@ import React from 'react'
 const TrackItem = ({ track, addToPlaylist }) => {
   //console.log(track)
   return (
-    <div className="card">
+    <div className="collection-item">
       <img
         src={track.album.images[0].url}
         alt=""
-        style={{ width: '64px', height: '64px' }}
+        style={{ width: '64px', height: '64px', display: 'inline-block' }}
       />
-      <p>name: {track.name}</p>
-      {/* <button className="btn btn-dark btn-sm my-1" onClick={() => {}}>
-        play
-      </button> */}
-      <p>artist: {track.artists[0].name}</p>
-      <p>album: {track.album.name}</p>
-      <button
-        className="btn btn-success btn-sm my-1"
+      <span>{track.name}</span>
+      <a
+        href="#"
+        className="secondary-content"
         onClick={() => {
-          addToPlaylist(track.uri)
+          addToPlaylist(track.uri, track.name, track.album.images[0].url)
         }}
       >
-        add to playlist
-      </button>
+        <i className="material-icons">add_circle_outline</i>
+      </a>
+      <span> | </span>
+      <span className="green-text">artist: {track.artists[0].name}</span>
+      <span> | </span>
+      <span className="blue-text">album: {track.album.name}</span>
     </div>
   )
 }

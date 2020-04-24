@@ -1,11 +1,12 @@
 import React from 'react'
+import PlaylistItem from './PlaylistItem'
 
 const Playlist = ({ playlist }) => {
-  if (playlist.tracks.items.length === 0) {
+  if (playlist.length === 0) {
     return <div>No tracks</div>
   } else {
-    return playlist.tracks.items.map((item, index) => (
-      <div key={index}>{item.track.name}</div>
+    return playlist.map((item, index) => (
+      <PlaylistItem key={index} track={item} />
     ))
   }
 }

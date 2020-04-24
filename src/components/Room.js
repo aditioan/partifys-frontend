@@ -6,32 +6,8 @@ import io from 'socket.io-client'
 
 let socket
 
-const Room = ({ token, room, playlistId }) => {
+const Room = ({ room }) => {
   const [playlist, setPlaylist] = useState(null)
-  const createPlaylist = async () => {
-    const res = await axios.get('https://api.spotify.com/v1/me', {
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-    })
-    console.log(res.data.id)
-
-    const playlist = await axios({
-      method: 'post',
-      url: `https://api.spotify.com/v1/users/${res.data.id}/playlists`,
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + token,
-      },
-      data: {
-        name: 'my new playlist',
-      },
-    })
-
-    console.log(playlist.data.id)
-    getPlaylist(playlist.data.id)
-    //setPlaylistId(playlist.data.id)
-  }
 
   const getPlaylist = async (room) => {
     const res = await axios.get(
@@ -40,42 +16,22 @@ const Room = ({ token, room, playlistId }) => {
 
     console.log(res.data)
 
-    // const res = await axios({
-    //   method: 'get',
-    //   url: `https://api.spotify.com/v1/playlists/${id}`,
-    //   headers: {
-    //     Authorization: 'Bearer ' + token,
-    //   },
-    // })
-    // console.log('playlist: ')
-    // console.log(res.data)
     setPlaylist(res.data)
   }
 
-  const addToPlaylist = async (uri) => {
+  const addToPlaylist = async (uri, name, image) => {
     try {
       const res = await axios.post('http://localhost:3001/room/add_track', {
         room: room,
         uri: uri,
-        votes: 0,
+        name,
+        image,
       })
       console.log(res.data.msg)
     } catch (err) {
       console.error(err.response.data.msg)
       return
     }
-
-    await axios({
-      method: 'post',
-      url: `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + token,
-      },
-      data: {
-        uris: [uri],
-      },
-    })
 
     socket.emit('changedList')
   }
@@ -90,7 +46,6 @@ const Room = ({ token, room, playlistId }) => {
     socket = io('localhost:3001')
 
     socket.on('refreshList', () => {
-      //setPlaylistId(playlistId)
       getPlaylist(room)
     })
 
@@ -100,18 +55,18 @@ const Room = ({ token, room, playlistId }) => {
     }
   }, [])
 
-  const sentHostInfo = async () => {
-    const res = await axios({
-      method: 'post',
-      url: 'http://localhost:3001/room_info',
-      data: {
-        room: room,
-        token: token,
-      },
-    })
+  // const sentHostInfo = async () => {
+  //   const res = await axios({
+  //     method: 'post',
+  //     url: 'http://localhost:3001/room_info',
+  //     data: {
+  //       room: room,
+  //       token: token,
+  //     },
+  //   })
 
-    console.log(res)
-  }
+  //   console.log(res)
+  // }
 
   return (
     <div className="container">
@@ -120,9 +75,9 @@ const Room = ({ token, room, playlistId }) => {
         <h3>Loading playlist...</h3>
       ) : (
         <div>
-          <h3>{playlist.name}</h3>
+          <h5>party playlist</h5>
           <Playlist playlist={playlist} />
-          <Search token={token} addToPlaylist={addToPlaylist} />
+          <Search room={room} addToPlaylist={addToPlaylist} />
         </div>
       )}
     </div>

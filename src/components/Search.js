@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import TrackItem from './TrackItem'
 
-const Search = ({ token, addToPlaylist }) => {
+const Search = ({ room, token, addToPlaylist }) => {
   const [keyword, setKeyword] = useState('')
   const [tracks, setTracks] = useState({})
   const [pagination, setPagination] = useState({
@@ -17,56 +17,50 @@ const Search = ({ token, addToPlaylist }) => {
   const onSubmit = (e) => {
     e.preventDefault()
     if (keyword !== '') {
-      searchItem(token)
+      searchItem(room)
       setKeyword('')
     }
   }
 
   const previousPage = async () => {
     if (pagination.previous !== null) {
-      const res = await axios.get(pagination.previous, {
-        headers: {
-          Authorization: 'Bearer ' + token,
-        },
-      })
+      const previous_url = encodeURIComponent(pagination.previous)
+      const res = await axios.get(
+        `http://localhost:3001/search/previous_page?room=${room}&previous=${previous_url}`
+      )
       //console.log(res)
-      setTracks(res.data.tracks)
+      setTracks(res.data)
       setPagination({
-        previous: res.data.tracks.previous,
-        next: res.data.tracks.next,
+        previous: res.data.previous,
+        next: res.data.next,
       })
     }
   }
 
   const nextPage = async () => {
     if (pagination.next !== null) {
-      const res = await axios.get(pagination.next, {
-        headers: {
-          Authorization: 'Bearer ' + token,
-        },
-      })
-      //console.log(res)
-      setTracks(res.data.tracks)
+      const next_url = encodeURIComponent(pagination.next)
+      const res = await axios.get(
+        `http://localhost:3001/search/next_page?room=${room}&next=${next_url}`
+      )
+
+      setTracks(res.data)
       setPagination({
-        previous: res.data.tracks.previous,
-        next: res.data.tracks.next,
+        previous: res.data.previous,
+        next: res.data.next,
       })
     }
   }
 
-  const searchItem = async (token) => {
-    // let searchString = `https://api.spotify.com/v1/search?q=name:${keyword}&type=track,artist,album&limit=50`
-    let searchString = `https://api.spotify.com/v1/search?q=${keyword}&type=track&limit=20`
-    const res = await axios.get(searchString, {
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-    })
-    //console.log(res)
-    setTracks(res.data.tracks)
+  const searchItem = async (room) => {
+    const res = await axios.get(
+      `http://localhost:3001/search?room=${room}&keyword=${keyword}`
+    )
+
+    setTracks(res.data)
     setPagination({
-      previous: res.data.tracks.previous,
-      next: res.data.tracks.next,
+      previous: res.data.previous,
+      next: res.data.next,
     })
   }
   return (
@@ -81,18 +75,31 @@ const Search = ({ token, addToPlaylist }) => {
           onChange={onChange}
         />
 
-        <input type="submit" value="Search" className="btn" />
+        <input
+          type="submit"
+          value="Search"
+          className="btn"
+          style={{ width: 200, margin: 10 }}
+        />
       </form>
 
-      <button onClick={previousPage} className="btn btn-dark">
+      <button
+        onClick={previousPage}
+        className="btn grey"
+        style={{ width: 200, margin: 10 }}
+      >
         Previous Page
       </button>
-      <button onClick={nextPage} className="btn btn-dark">
+      <button
+        onClick={nextPage}
+        className="btn grey"
+        style={{ width: 200, margin: 10 }}
+      >
         Next Page
       </button>
 
       {JSON.stringify(tracks) !== '{}' && tracks.items.length > 0 && (
-        <div style={tracksStyle}>
+        <ul className="collection left-align">
           {tracks.items.map((item) => (
             <TrackItem
               key={item.id}
@@ -101,16 +108,10 @@ const Search = ({ token, addToPlaylist }) => {
               addToPlaylist={addToPlaylist}
             />
           ))}
-        </div>
+        </ul>
       )}
     </div>
   )
-}
-
-const tracksStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(4, 1fr)',
-  gridGap: '1rem',
 }
 
 export default Search

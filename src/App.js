@@ -5,6 +5,9 @@ import { formatName } from './layout-components/format-name'
 
 import styles from './app.module.css'
 
+import 'materialize-css/dist/css/materialize.min.css'
+import M from 'materialize-css/dist/js/materialize.min.js'
+
 import axios from 'axios'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -77,20 +80,12 @@ export default class App extends Component {
               })
               .then((res) => {
                 this.setState({
-                  //access_token,
-                  //refresh_token,
                   partyCode: res.data.roomNumber,
-                  //playlistId: res.data.playlist_id,
                 })
               })
           }
         })
     }
-  }
-
-  componentDidUpdate() {
-    //init the materializecss javascript
-    M.AutoInit()
   }
 
   onChange = (e) => {
@@ -131,45 +126,41 @@ export default class App extends Component {
       //landing page
       return (
         <Provider store={store}>
-          <div className="row">
-            <div className="col s12 m4 offset-m4">
-              <div
-                className="card grey lighten-5"
-                style={{ marginTop: 50, paddingTop: 10 }}
-              >
-                <h1 className="grey-text text-darken-4 center-align">
-                  Partifys
-                </h1>
-                <div className="card-content">
-                  <form onSubmit={this.onJoin}>
-                    <div className="input-field">
-                      <input
-                        id="join_party"
-                        type="text"
-                        value={this.state.joinCode}
-                        onChange={this.onChange}
-                      />
-                      <label htmlFor="join_party">Enter Your Party Code</label>
-                    </div>
+          <div className={styles.app}>
+            <div className={styles.home}>
+              <h1 className={styles.titleApp}>Partifys</h1>
 
-                    <button
-                      className="btn waves-effect waves-light grey darken-4"
-                      style={{ width: '100%' }}
-                      type="submit"
-                      name="join"
-                    >
-                      Join a party
-                    </button>
-                    <a
-                      className="waves-effect waves-light btn grey darken-4"
-                      style={{ width: '100%', marginTop: 20 }}
-                      href={this.spotifyOauthUrl}
-                    >
-                      Create your own
-                    </a>
-                  </form>
-                </div>
-              </div>
+              <p className={styles.highlight}>
+                A premium Spotify account is required to use Partifys
+              </p>
+              <form onSubmit={this.onJoin}>
+                <input
+                  type="text"
+                  // name="partycode"
+                  placeholder="Party code"
+                  value={this.state.joinCode}
+                  onChange={this.onChange}
+                  style={{ margin: 10 }}
+                  className="browser-default"
+                />
+                {/* <ExternalLinkButton variant="primary" type="submit">
+                  Join a party
+                </ExternalLinkButton> */}
+                <button
+                  type="submit"
+                  name="join"
+                  className="btn"
+                  style={{ textTransform: 'none' }}
+                >
+                  Join a party
+                </button>
+              </form>
+              <ExternalLinkButton
+                variant="secondary"
+                href={this.spotifyOauthUrl}
+              >
+                Create a party
+              </ExternalLinkButton>
             </div>
           </div>
         </Provider>
