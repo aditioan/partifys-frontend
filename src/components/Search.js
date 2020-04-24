@@ -70,9 +70,9 @@ const Search = ({ token, addToPlaylist }) => {
     })
   }
   return (
-    <div className="container">
+    <div className="center-align">
       <h3>The Search Component</h3>
-      <form onSubmit={onSubmit} className="form">
+      <form onSubmit={onSubmit}>
         <input
           type="text"
           name="text"
@@ -80,11 +80,8 @@ const Search = ({ token, addToPlaylist }) => {
           value={keyword}
           onChange={onChange}
         />
-        <input
-          type="submit"
-          value="Search"
-          className="btn btn-dark btn-block"
-        />
+
+        <input type="submit" value="Search" className="btn" />
       </form>
 
       <button onClick={previousPage} className="btn btn-dark">

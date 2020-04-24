@@ -7,7 +7,6 @@ import io from 'socket.io-client'
 let socket
 
 const Room = ({ token, room, playlistId }) => {
-  //const [playlistId, setPlaylistId] = useState('')
   const [playlist, setPlaylist] = useState(null)
   const createPlaylist = async () => {
     const res = await axios.get('https://api.spotify.com/v1/me', {
@@ -34,16 +33,22 @@ const Room = ({ token, room, playlistId }) => {
     //setPlaylistId(playlist.data.id)
   }
 
-  const getPlaylist = async (id) => {
-    const res = await axios({
-      method: 'get',
-      url: `https://api.spotify.com/v1/playlists/${id}`,
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-    })
-    console.log('playlist: ')
+  const getPlaylist = async (room) => {
+    const res = await axios.get(
+      `http://localhost:3001/room/tracks?room=${room}`
+    )
+
     console.log(res.data)
+
+    // const res = await axios({
+    //   method: 'get',
+    //   url: `https://api.spotify.com/v1/playlists/${id}`,
+    //   headers: {
+    //     Authorization: 'Bearer ' + token,
+    //   },
+    // })
+    // console.log('playlist: ')
+    // console.log(res.data)
     setPlaylist(res.data)
   }
 
@@ -74,10 +79,10 @@ const Room = ({ token, room, playlistId }) => {
 
     socket.emit('changedList')
   }
+
+  //after window load, get play list
   useEffect(() => {
-    //createPlaylist()
-    getPlaylist(playlistId)
-    //getPlaylist(playlistId)
+    getPlaylist(room)
   }, [])
 
   //In the full lifecycle of the room component, the socket is alive
@@ -86,7 +91,7 @@ const Room = ({ token, room, playlistId }) => {
 
     socket.on('refreshList', () => {
       //setPlaylistId(playlistId)
-      getPlaylist(playlistId)
+      getPlaylist(room)
     })
 
     return () => {
@@ -94,11 +99,6 @@ const Room = ({ token, room, playlistId }) => {
       socket.off()
     }
   }, [])
-
-  //sent room number and token to the backend
-  // useEffect(() => {
-  //   sentHostInfo()
-  // }, [])
 
   const sentHostInfo = async () => {
     const res = await axios({
@@ -114,9 +114,8 @@ const Room = ({ token, room, playlistId }) => {
   }
 
   return (
-    <div>
-      <h1>This is room {room}</h1>
-      <div>playlistId= {playlistId}</div>
+    <div className="container">
+      <h3>Party Room {room}</h3>
       {playlist === null ? (
         <h3>Loading playlist...</h3>
       ) : (
