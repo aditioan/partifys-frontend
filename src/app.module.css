@@ -13,11 +13,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 
-  background: #28302A;
-  background-image: url('/wave.svg');
+  background: #28302a;
+  background-image: url("/wave.svg");
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-size:100%;
+  background-size: 100%;
 }
 
 .titleApp {
@@ -31,18 +31,17 @@
 
   letter-spacing: 0.11em;
 
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .highlight {
   position: relative;
-  
+
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 26px;
   /* identical to box height */
 
-
-  color: rgba(255, 255, 255, 0.5)
+  color: rgba(255, 255, 255, 0.5);
 }

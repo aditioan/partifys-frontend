@@ -1,55 +1,64 @@
-import React, { Component } from 'react';
-import qs from 'querystring'
-import { ExternalLinkButton } from './layout-components/button';
-import TextField from './layout-components/text-field';
-import { formatName } from './layout-components/format-name';
-import styles from './app.module.css';
+import React, { Component } from "react";
+import { formatName } from "./layout-components/format-name";
+import styles from "./app.module.css";
+import LandingPage from "./components/LandingPage.js/LandingPage";
+import Home from "./components/Home";
+import Loading from "./components/Loading";
 
 export default class App extends Component {
-  state = {
-    partyName: '',
-    partyCode: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      partyName: "",
+      partyCode: "",
+      isLoading: false,
+      isLoaggedIn: false,
+    };
+    this.setLoggedInFlag = this.setLoggedInFlag.bind(this);
+    this.setLoadingflag = this.setLoadingflag.bind(this);
+  }
+  // state = {
+  //   partyName: '',
+  //   partyCode: '',
+  //   loginflag:false
+  // }
+
+  setLoadingflag(val) {
+
+    this.setState({
+      isLoading: val,
+    });
   }
 
-  get partyUrl () {
-    return `/${this.state.partyName}/${this.state.partyCode}`
+  setLoggedInFlag(val1, val2, room) {
+    this.setState({
+      isLoaggedIn: val1,
+      isLoading: val2,
+      partyCode: room,
+    });
   }
 
-  get spotifyOauthUrl () {
-    const query = {
-      client_id: process.env.REACT_APP_CLIENT_ID,
-      response_type: 'token',
-      redirect_uri: process.env.REACT_APP_REDIRECT_URI,
-      state: qs.stringify({
-        party: this.state.partyName,
-        code: this.state.partyCode
-      }),
-      scope: 'streaming user-read-email user-read-private'
-    }
-    console.log(process.env.REACT_APP_CLIENT_ID);
-    return `https://accounts.spotify.com/authorize?${qs.stringify(query)}`
+  get partyUrl() {
+    return `/${this.state.partyName}/${this.state.partyCode}`;
   }
 
-  onPartyNameChange = partyName =>
-    this.setState({ partyName: formatName(partyName) })
+  onPartyNameChange = (partyName) =>
+    this.setState({ partyName: formatName(partyName) });
 
-  render() { 
+  render() {
+
     return (
       <div className={styles.app}>
-        <div className={styles.home}>
-          <h1 className={styles.titleApp}>Partifys</h1>
-
-          <p className={styles.highlight}>A premium Spotify account is required to use Partifys</p>
-          
-          <TextField type="text" name="partycode" placeholder="Party code" />
-          <ExternalLinkButton variant='primary' href={`https://www.google.com/`}>
-            Join a party
-          </ExternalLinkButton>
-
-          <ExternalLinkButton variant='secondary' href={this.spotifyOauthUrl}>
-            Create a party
-          </ExternalLinkButton>
-        </div>
+        {this.state.isLoading && !this.state.isLoaggedIn ? (
+          <Loading />
+        ) : this.state.isLoaggedIn && !this.state.isLoading ? (
+          <Home room={this.state.partyCode} />
+        ) : (
+          <LandingPage
+            loading={this.setLoadingflag}
+            loggedIn={this.setLoggedInFlag}
+          />
+        )}
       </div>
     );
   }
