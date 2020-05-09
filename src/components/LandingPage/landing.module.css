@@ -1,0 +1,85 @@
+.main {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  padding: 10%;
+  flex-wrap: nowrap;
+}
+
+.subtitle {
+  color: #dddddd;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.partyText {
+  height: 35px;
+}
+
+.text {
+  height: 25px;
+}
+.text:focus {
+  border: 3px solid blue;
+}
+
+.field {
+  width: 100%;
+  height: 56px;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s all;
+}
+.field:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 70px;
+  color: #dddddd;
+}
+@media only screen and (min-width: 600px) {
+  .image {
+    width: 50%;
+    position: absolute;
+    top: 10%;
+  }
+  .btn {
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    display: grid;
+
+    /* This is better for small screens, once min() is better supported */
+    /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
+    grid-template-areas:
+      "head"
+      "img";
+  }
+  .btn {
+    margin: 5px 3px;
+  }
+
+  .image {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    bottom: 9.8%;
+  }
+
+  .header {
+    font-size: 50px;
+  }
+
+  .item1 {
+    grid-area: head;
+  }
+  .item2 {
+    grid-area: img;
+  }
+}

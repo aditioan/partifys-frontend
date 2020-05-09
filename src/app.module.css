@@ -12,12 +12,6 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
-
-  background: #28302a;
-  background-image: url("/wave.svg");
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: 100%;
 }
 
 .titleApp {
