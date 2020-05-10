@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { AwesomeButton } from "react-awesome-button";
-import "react-awesome-button/dist/styles.css";
-import qs from "querystring";
-import logo from "../../music.svg";
-import styles from "./landing.module.css";
+import { Attraction, Car } from "grommet-icons";
 
-class LandingPage extends Component {
+import { TextInput, Anchor, Box, Button, Text } from "grommet";
+import qs from "querystring";
+export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,21 +12,23 @@ class LandingPage extends Component {
       isLoading: false,
       isLoaggedIn: false,
     };
-    this.join = this.join.bind(this);
+    this.spotifyLogin = this.spotifyLogin.bind(this);
   }
+
   componentDidMount() {
     const newUrl = new URLSearchParams(window.location.search);
-
+    console.log(newUrl);
     if (newUrl.has("code")) {
       const code = newUrl.get("code");
       const state = newUrl.get("state");
-      this.setLoading(true);
 
       const token = {
         code: code,
         state: state,
       };
+      console.log(token);
       this.postToken(token);
+      window.location = "/room";
     }
   }
   setLoading(val) {
@@ -102,6 +102,10 @@ class LandingPage extends Component {
       });
   }
 
+  spotifyLogin() {
+    window.location = this.spotifyOauthUrl;
+  }
+
   get spotifyOauthUrl() {
     const query = {
       client_id: process.env.REACT_APP_CLIENT_ID,
@@ -119,30 +123,53 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className={styles.main}>
-        <div className={`${styles.child} ${styles.item1}`}>
-          <div>
-            <h1 className={styles.header}>Welcome to partifys</h1>
-            <p className={styles.subtitle}>
-              A spotify party player
-              <br></br>
-            </p>
-          </div>
-          <div className={styles.input}>
-            {/* <Input
-              size="large"
-              onChange={(e) => this.handleChange(e)}
-              className={styles.partyText}
-              placeholder="Party code"
-            /> */}
-          </div>
-        </div>
-        <div className={`${styles.child}${styles.item2}`}>
-          <img className={styles.image} src={logo} alt="logo" />
-        </div>
+      <div>
+        <Box
+          direction="row-responsive"
+          justify="center"
+          align="center"
+          pad="xlarge"
+          background="28302a"
+          gap="medium"
+        >
+          <Box
+            pad="large"
+            align="center"
+            background={{ color: "light-2", opacity: "strong" }}
+            round
+            width="medium"
+            height="medium"
+            justify="center"
+            gap="small"
+          >
+            <Attraction size="large" />
+            <Text>Join a Party</Text>
+            <Anchor href="" label="Link" />
+            <TextInput placeholder="Room number" />
+            <Button label="Button" onClick={() => {}} />
+          </Box>
+          <Box
+            pad="large"
+            align="center"
+            background="dark-3"
+            width="medium"
+            height="medium"
+            justify="center"
+            round
+            gap="small"
+          >
+            <Car size="large" color="light-2" />
+            <Text>Create a party</Text>
+
+            <Button
+              label="Spotify Login"
+              onClick={() => {
+                this.spotifyLogin();
+              }}
+            ></Button>
+          </Box>
+        </Box>
       </div>
     );
   }
 }
-
-export default LandingPage;
