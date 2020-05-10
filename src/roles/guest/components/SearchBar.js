@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import debounce from 'debounce'
-import MdAccountCirle from 'react-icons/lib/md/account-circle'
+import { MdAccountCircle } from 'react-icons/md'
 import { withApi } from 'roles/guest/components/providers/ApiProvider'
 import Suggestions from 'roles/guest/components/Suggestions'
 import DelayedLoader from 'roles/guest/components/DelayedLoader'
@@ -21,7 +21,7 @@ const Nav = styled.nav`
   box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
 `
 
-const ProfileIcon = styled(MdAccountCirle)`
+const ProfileIcon = styled(MdAccountCircle)`
   cursor: pointer;
   font-size: 24px;
   margin-right: 12px;

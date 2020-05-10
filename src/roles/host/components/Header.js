@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getParty } from 'roles/host/reducers'
-import FullScreenButton from './FullScreenButton'
+import FullscreenButton from './FullscreenButton'
 
 const Outer = styled.header`
   position: relative;
@@ -26,9 +26,9 @@ const Outer = styled.header`
 function Header ({ party }) {
   return (
     <Outer>
-      Share this party using code: <b>{party.code}</b>
+      {window.location.hostname}/{party.name}/{party.code}
 
-      <FullScreenButton />
+      <FullscreenButton />
     </Outer>
   )
 }

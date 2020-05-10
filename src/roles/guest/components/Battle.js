@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled, { keyframes } from 'styled-components'
-import MdFavorite from 'react-icons/lib/md/favorite'
+import { MdFavorite } from 'react-icons/md'
 import Typography from 'layout-components/Typography'
 import { withApi } from 'roles/guest/components/providers/ApiProvider'
 import Contender from 'roles/guest/components/Contender'

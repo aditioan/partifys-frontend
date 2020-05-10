@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MdRewind } from 'react-icons/md'
+import { MdFastRewind } from 'react-icons/md'
 import Typography from 'layout-components/Typography'
 import { LinkButton } from 'layout-components/Button'
 
@@ -20,7 +20,7 @@ const Outer = styled.div`
   }
 `
 
-const FailedIcon = styled(MdRewind)`
+const FailedIcon = styled(MdFastRewind)`
   font-size: 256px;
   color: #fff;
   margin-bottom: 24px;

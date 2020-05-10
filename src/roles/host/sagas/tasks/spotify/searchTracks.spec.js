@@ -1,5 +1,5 @@
 import { call } from 'redux-saga/effects'
-import getSpotifyClient from './getSpotifyClient'
+import getSpotifyClient from '../spotify/getSpotifyClient'
 import searchTracks from './searchTracks'
 
 test('Returns the results from the Spotify API', () => {

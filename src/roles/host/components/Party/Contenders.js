@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { getContenders } from 'roles/host/reducers'
 import Contender from './Contender'
 import { SpotifyTrack } from 'helpers/propTypes'
+import { v4 as uuid} from 'uuid'
 
 const Wrapper = styled.div`
   flex: 1;
@@ -23,7 +24,7 @@ function Contenders ({ contenders }) {
     <Wrapper>
       {_contenders.map(contender => (
         <Contender
-          key={contender ? contender.id : undefined}
+          key={uuid()}
           contender={contender}
         />
       ))}

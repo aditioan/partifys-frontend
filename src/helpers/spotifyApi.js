@@ -31,12 +31,12 @@ export default function SpotifyApiFactory ({ accessToken }) {
       }
     },
     profile: {
-      async getUsername() {
+      async getData() {
         const { data } = await axios.get(makeUrl(`/me`), {
           headers: makeHeaders()
         })
 
-        return data.display_name
+        return data
       }
     },
     player: {

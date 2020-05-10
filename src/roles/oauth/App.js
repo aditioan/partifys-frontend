@@ -2,18 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import qs from 'querystring'
 import { Redirect } from 'react-router-dom'
-import { formatName } from 'helpers/formatName'
-import { v4 as uuid } from 'uuid'
 
 export default function App ({ history, location }) {
   const hash = location.hash.substr(1)
   const params = new window.URLSearchParams(hash)
 
   const accessToken = params.get('access_token')
+  const party = qs.parse(params.get('state'))
 
   const hostParams = {
-    party: formatName(uuid()),
-    code: Math.floor(100000 + Math.random() * 900000),
+    party: party.party,
+    code: party.code,
     accessToken
   }
 

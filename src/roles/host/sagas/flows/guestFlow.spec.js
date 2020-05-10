@@ -1,4 +1,5 @@
 import { takeEvery } from 'redux-saga/effects'
+import { GUEST_READY } from 'roles/host/actions/guests'
 import { ADD_TO_BATTLE } from 'roles/host/actions/tracks'
 import notifyBattleUpdate from 'roles/host/sagas/tasks/notifyBattleUpdate'
 import searchTracks from 'roles/host/sagas/tasks/guests/searchTracks'
