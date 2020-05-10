@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
-import MdFullscreenExit from 'react-icons/lib/md/fullscreen-exit'
-import MdFullscreen from 'react-icons/lib/md/fullscreen'
+import { MdFullscreenExit, MdFullscreen } from 'react-icons/md'
 
 const style = css`
   cursor: pointer;

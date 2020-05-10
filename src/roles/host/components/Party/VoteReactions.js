@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
-import MdFav from 'react-icons/lib/md/favorite'
+import { MdFavorite } from 'react-icons/md'
 import { getContenders } from 'roles/host/reducers'
 
 const opacityAnimation = keyframes`
@@ -38,7 +38,7 @@ const Zone = styled.div`
   width: 50%;
 `
 
-const HeartIcon = styled(MdFav)`
+const HeartIcon = styled(MdFavorite)`
   color: red;
   position: absolute;
   display: inline;

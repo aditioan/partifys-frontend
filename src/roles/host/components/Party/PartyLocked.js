@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import MdLock from 'react-icons/lib/md/lock-outline'
+import { MdLock } from 'react-icons/md'
 import Typography from 'layout-components/Typography'
 import { LinkButton } from 'layout-components/Button'
 

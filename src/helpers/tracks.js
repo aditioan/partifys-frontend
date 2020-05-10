@@ -1,4 +1,4 @@
-import defaultAlbumCover from '../../public/default-album-cover.png'
+import defaultAlbumCover from './default-album-cover.png'
 
 /**
  * Gets the album cover for a track.

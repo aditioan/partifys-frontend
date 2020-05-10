@@ -1,37 +1,22 @@
 import qs from 'querystring'
-import React, { Component } from 'react'
+import React, { Component, Suspense, lazy } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import theme from 'layout-components/theme'
-import Loadable from 'react-loadable'
 
 const getQueryParams = search => qs.parse(search.substr(1))
 
-const HomeApp = Loadable({
-  loader: () => import('roles/home/App'),
-  loading: () => null
-})
-
-const HostApp = Loadable({
-  loader: () => import('roles/host/App'),
-  loading: () => null
-})
-
-const GuestApp = Loadable({
-  loader: () => import('roles/guest/App'),
-  loading: () => null
-})
-
-const OauthApp = Loadable({
-  loader: () => import('roles/oauth/App'),
-  loading: () => null
-})
+const HomeApp = lazy(() => import('roles/home/App'));
+const HostApp = lazy(() => import('roles/host/App'));
+const GuestApp = lazy(() => import('roles/guest/App'));
+const OauthApp = lazy(() => import('roles/oauth/App'));
 
 class App extends Component {
   render () {
     return (
       <ThemeProvider theme={theme}>
         <BrowserRouter className='App'>
+        <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Route path='/home' component={HomeApp} />
             <Route path='/oauth/callback' component={OauthApp} />
@@ -62,6 +47,7 @@ class App extends Component {
             />
             <Redirect from='/' to='/home' />
           </Switch>
+          </Suspense>
         </BrowserRouter>
       </ThemeProvider>
     )

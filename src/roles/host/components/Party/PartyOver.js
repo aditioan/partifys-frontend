@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getTracksSummary, getGuests, getBestDJs } from 'roles/host/reducers'
-import Typography from 'core/components/Typography'
+import Typography from 'layout-components/Typography'
 import {
   getAlbumCover,
   getArtistsAsHumanFormat,

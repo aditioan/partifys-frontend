@@ -26,8 +26,7 @@ const Outer = styled.header`
 function Header ({ party }) {
   return (
     <Outer>
-      <p>Welcome to {party.name} party!</p>
-      <p>Share party using this code: {party.code}</p>
+      Share this party using code: <b>{party.code}</b>
 
       <FullScreenButton />
     </Outer>

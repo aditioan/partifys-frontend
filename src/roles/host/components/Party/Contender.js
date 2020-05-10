@@ -51,7 +51,7 @@ const BaseCover = styled.div`
 
 const placeholderComponents = {
   Wrapper: BaseWrapper,
-  Cover: BaseCover.extend`
+  Cover: styled(BaseCover)`
     background: rgba(255, 255, 255, .15);
     padding-bottom: 80%;
     overflow: hidden;
@@ -66,25 +66,25 @@ const placeholderComponents = {
       background: linear-gradient(-220deg, transparent 50%, rgba(255, 255, 255, .05) 50%);
     }
   `,
-  TrackName: BaseTrackName.extend`
+  TrackName: styled(BaseTrackName)`
     color: transparent;
     text-shadow: 0 0 17px rgba(255, 255, 255, 1);
   `,
-  Artists: BaseArtists.extend`
+  Artists: styled(BaseArtists)`
     color: transparent;
     text-shadow: 0 0 17px rgba(255, 255, 255, 1);
   `
 }
 
 const contenderComponents = {
-  Wrapper: BaseWrapper.extend`
+  Wrapper: styled(BaseWrapper)`
     animation: ${enterAnimation} .5s cubic-bezier(.17,.67,.87,.31);
     
     p {
       text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
     }
   `,
-  Cover: BaseCover.withComponent('img').extend`
+  Cover: styled(BaseCover.withComponent('img'))`
     display: block;
     transform: scale(1);
     max-width: 450px;

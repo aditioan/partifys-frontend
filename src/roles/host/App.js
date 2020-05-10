@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import styled from 'styled-components'
-import createStore from 'roles/host/createStore'
-import Header from 'roles/host/components/Header'
-import Party from 'roles/host/components/Party'
-import Player from 'roles/host/components/Player'
+import createStore from './createStore'
+import Header from './components/Header'
+import Party from './components/Party'
+import Player from './components/Player'
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,7 +34,6 @@ export default class Host extends Component {
       }
     })
   }
-
   render () {
     return (
       <Provider store={this.store}>
