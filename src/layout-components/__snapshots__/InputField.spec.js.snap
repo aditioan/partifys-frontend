@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField Should render a filled Textfield 1`] = `
+<input
+  className="inputLogin iconKey"
+  name="email"
+  placeholder="john.doe@company.com"
+  type="email"
+/>
+`;
+
+exports[`TextField Should render an empty Textfield 1`] = `
+<input
+  className="inputLogin iconKey"
+  name="email"
+  placeholder="john.doe@company.com"
+  type="email"
+/>
+`;
+
+exports[`TextField Should render an empty text TextField by default 1`] = `
+<input
+  className="inputLogin iconKey"
+  name="test"
+  placeholder="write something"
+/>
+`;

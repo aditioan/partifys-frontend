@@ -1,56 +1,71 @@
-import React, { Component } from 'react';
 import qs from 'querystring'
-import { ExternalLinkButton } from './layout-components/button';
-import TextField from './layout-components/text-field';
-import { formatName } from './layout-components/format-name';
-import styles from './app.module.css';
+import React, { Component } from 'react'
+import { ThemeProvider } from 'styled-components'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import theme from './layout-components/theme'
+import Loadable from 'react-loadable'
 
-export default class App extends Component {
-  state = {
-    partyName: '',
-    partyCode: ''
-  }
+const getQueryParams = search => qs.parse(search.substr(1))
 
-  get partyUrl () {
-    return `/${this.state.partyName}/${this.state.partyCode}`
-  }
+const HomeApp = Loadable({
+  loader: () => import('./components/home/App'),
+  loading: () => null
+})
 
-  get spotifyOauthUrl () {
-    const query = {
-      client_id: process.env.REACT_APP_CLIENT_ID,
-      response_type: 'token',
-      redirect_uri: process.env.REACT_APP_REDIRECT_URI,
-      state: qs.stringify({
-        party: this.state.partyName,
-        code: this.state.partyCode
-      }),
-      scope: 'streaming user-read-email user-read-private'
-    }
-    console.log(process.env.REACT_APP_CLIENT_ID);
-    return `https://accounts.spotify.com/authorize?${qs.stringify(query)}`
-  }
+const HostApp = Loadable({
+  loader: () => import('./components/host/App'),
+  loading: () => null
+})
 
-  onPartyNameChange = partyName =>
-    this.setState({ partyName: formatName(partyName) })
+const GuestApp = Loadable({
+  loader: () => import('./components/guest/App'),
+  loading: () => null
+})
 
-  render() { 
+const OauthApp = Loadable({
+  loader: () => import('./components/oauth/App'),
+  loading: () => null
+})
+
+class App extends Component {
+  render () {
     return (
-      <div className={styles.app}>
-        <div className={styles.home}>
-          <h1 className={styles.titleApp}>Partifys</h1>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter className='App'>
+          <Switch>
+            <Route path='/home' component={HomeApp} />
+            <Route path='/oauth/callback' component={OauthApp} />
+            <Route
+              path='/host'
+              render={({ location }) => {
+                const { party, accessToken, code } = getQueryParams(
+                  location.search
+                )
 
-          <p className={styles.highlight}>A premium Spotify account is required to use Partifys</p>
-          
-          <TextField type="text" name="partycode" placeholder="Party code" />
-          <ExternalLinkButton variant='primary' href={`https://www.google.com/`}>
-            Join a party
-          </ExternalLinkButton>
+                return (
+                  <HostApp
+                    party={party}
+                    code={code}
+                    accessToken={accessToken}
+                  />
+                )
+              }}
+            />
+            <Route
+              path='/:party/:code'
+              render={({ match, ...rest }) => {
+                const { party, code } = match.params
+                const props = { party, code }
 
-          <ExternalLinkButton variant='secondary' href={this.spotifyOauthUrl}>
-            Create a party
-          </ExternalLinkButton>
-        </div>
-      </div>
-    );
+                return <GuestApp {...props} />
+              }}
+            />
+            <Redirect from='/' to='/home' />
+          </Switch>
+        </BrowserRouter>
+      </ThemeProvider>
+    )
   }
 }
+
+export default App

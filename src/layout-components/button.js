@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const typeThemes = {
     primary: css`
-        background: #07D44F;
+        background: ${({ theme }) => theme.colors.primary};
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         text-decoration: none;
         color: #FFFFFF;
@@ -16,7 +16,7 @@ const typeThemes = {
         }
     `,
     secondary: css`
-        background: #07EE59;
+        background: ${({ theme }) => theme.colors.secondary};
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         text-decoration: none;
         color: #FFFFFF;
