@@ -2,28 +2,28 @@ import qs from 'querystring'
 import React, { Component } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import theme from './layout-components/theme'
+import theme from 'layout-components/theme'
 import Loadable from 'react-loadable'
 
 const getQueryParams = search => qs.parse(search.substr(1))
 
 const HomeApp = Loadable({
-  loader: () => import('./components/home/App'),
+  loader: () => import('roles/home/App'),
   loading: () => null
 })
 
 const HostApp = Loadable({
-  loader: () => import('./components/host/App'),
+  loader: () => import('roles/host/App'),
   loading: () => null
 })
 
 const GuestApp = Loadable({
-  loader: () => import('./components/guest/App'),
+  loader: () => import('roles/guest/App'),
   loading: () => null
 })
 
 const OauthApp = Loadable({
-  loader: () => import('./components/oauth/App'),
+  loader: () => import('roles/oauth/App'),
   loading: () => null
 })
 

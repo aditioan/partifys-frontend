@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import TextField from './TextField'
+import InputField from './InputField'
 import 'jest-styled-components'
 import { ThemeProvider } from 'styled-components'
 
@@ -16,12 +16,12 @@ const theme = {
   }
 }
 
-describe('TextField', () => {
-  it('Should render an empty text TextField by default', () => {
+describe('InputField', () => {
+  it('Should render an empty text InputField by default', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={theme}>
-          <TextField
+          <InputField
             className='test-textfield'
             label='My label'
             name='test'
@@ -40,7 +40,7 @@ describe('TextField', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={theme}>
-          <TextField
+          <InputField
             className='test-textfield'
             type='email'
             label='Email address'
@@ -56,11 +56,11 @@ describe('TextField', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('Should render a filled Textfield', () => {
+  it('Should render a filled InputField', () => {
     const tree = renderer
       .create(
         <ThemeProvider theme={theme}>
-          <TextField
+          <InputField
             className='test-textfield'
             type='email'
             label='Email address'
