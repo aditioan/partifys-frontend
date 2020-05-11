@@ -11,8 +11,11 @@ export default class Login extends Component {
       partyCode: "",
       isLoading: false,
       isLoaggedIn: false,
+      guestName :""
     };
     this.spotifyLogin = this.spotifyLogin.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +41,7 @@ export default class Login extends Component {
   join() {
     const roomnumber = {
       roomNumber: this.state.partyCode,
+      guestName : this.state.guestName
     };
 
     fetch("http://localhost:3001/room/join", {
@@ -49,26 +53,18 @@ export default class Login extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        this.setState({
-          partyName: data.owner + "'s Party",
-          partyCode: data.roomNumber,
-        });
-        this.setPartyDetails({
-          partyName: this.state.partyName,
-          partyCode: this.state.partyCode,
-        });
+        // this.setState({
+        //   partyName: data.owner + "'s Party",
+        //   partyCode: data.roomNumber,
+        // });
+        console.log(data)
+       
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }
-  setLoggedInFlag(val1, val2, roomNumber) {
-    this.props.loggedIn(val1, val2, roomNumber);
-  }
 
-  setPartyDetails(val) {
-    this.props.partyDetails(val);
-  }
 
   makeDummyReq() {
     fetch("http://localhost:3001/")
@@ -84,6 +80,10 @@ export default class Login extends Component {
   handleChange(e) {
     this.setState({ partyCode: e.target.value });
   }
+  handleGuest(e) {
+    this.setState({ guestName: e.target.value });
+  }
+
 
   postToken(token) {
     fetch("http://localhost:3001/room/", {
@@ -121,6 +121,8 @@ export default class Login extends Component {
     return `https://accounts.spotify.com/authorize?${qs.stringify(query)}`;
   }
 
+  
+
   render() {
     return (
       <div>
@@ -144,9 +146,12 @@ export default class Login extends Component {
           >
             <Attraction size="large" />
             <Text>Join a Party</Text>
-            <Anchor href="" label="Link" />
-            <TextInput placeholder="Room number" />
-            <Button label="Button" onClick={() => {}} />
+            
+            <TextInput placeholder="Room number" value={this.state.partyCode} onChange={this.handleChange}/>
+            <TextInput placeholder="Your name" value={this.state.guestName} onChange={this.handleGuest}/>
+            <Button label="Join" onClick={() => {
+                this.join();
+              }} />
           </Box>
           <Box
             pad="large"

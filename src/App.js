@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { formatName } from "./layout-components/format-name";
 import { Redirect } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
-
+import JoinParty from './components/Login/JoinParty';
 import Loading from "./components/Loading";
 import "react-awesome-button/dist/styles.css";
 import { Switch, Route, Link } from "react-router-dom";
@@ -154,6 +154,9 @@ export default class App extends Component {
           </Route>
           <Route path="/room">
             <Room room={this.state.partyCode} />
+          </Route>
+          <Route path="/joindetails">
+            <JoinParty room={this.state.partyCode} />
           </Route>
 
           <Route exact path="/">

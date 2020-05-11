@@ -39,6 +39,7 @@
   font-family: "Fjalla One", sans-serif;
   font-size: 70px;
   color: #dddddd;
+  line-height:60px
 }
 @media only screen and (min-width: 600px) {
   .image {
@@ -46,8 +47,10 @@
     position: absolute;
     top: 10%;
   }
-  .btn {
-    margin: 10px;
+  .header{
+    font-size: 50px;
+    
+    
   }
 }
 

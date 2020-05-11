@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import qs from "querystring";
 import logo from "../../music.svg";
@@ -122,7 +121,7 @@ class LandingPage extends Component {
       <div className={styles.main}>
         <div className={`${styles.child} ${styles.item1}`}>
           <div>
-            <h1 className={styles.header}>Welcome to partifys</h1>
+            <h2 className={styles.header}>Welcome to partifys</h2>
             <p className={styles.subtitle}>
               A spotify party player
               <br></br>
