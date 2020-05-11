@@ -7,7 +7,7 @@ import {
   SIGNALING_IN_LEAVE
 } from 'roles/host/actions/signaling'
 import { ADD_GUEST, GUEST_READY } from 'roles/host/actions/guests'
-import iceServers from 'network/iceServers'
+import iceServers from 'helpers/iceServers'
 import { getGuest } from 'roles/host/reducers'
 import { addGuest, guestDisconnected, guestReady } from 'roles/host/actions/guests'
 import watchGuestEvents from 'roles/host/sagas/tasks/watchGuestEvents'

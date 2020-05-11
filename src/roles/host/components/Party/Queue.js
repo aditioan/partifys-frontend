@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled, { keyframes } from 'styled-components'
 import Typography from 'layout-components/Typography'
-import { SpotifyTrack } from 'helpers/propTypes'
+import { SpotifyTrack } from 'layout-components/propTypes'
 import { getAlbumCover, getArtistsAsHumanFormat } from 'helpers/tracks'
 import { getQueue } from 'roles/host/reducers'
 

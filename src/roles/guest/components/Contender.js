@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 import Typography from 'layout-components/Typography'
-import { SpotifyTrack } from 'helpers/propTypes'
+import { SpotifyTrack } from 'layout-components/propTypes'
 import { getAlbumCover, getArtistsAsHumanFormat } from 'helpers/tracks'
 
 const blinkAnimation = keyframes`

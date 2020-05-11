@@ -26,7 +26,7 @@ const Outer = styled.header`
 function Header ({ party }) {
   return (
     <Outer>
-      {window.location.hostname}/{party.name}/{party.code}
+      Welcome to <b>{party.name}</b> party! Share this party using code <b>{party.code}</b>
 
       <FullscreenButton />
     </Outer>

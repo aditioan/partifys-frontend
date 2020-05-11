@@ -18,7 +18,7 @@ const theme = {
 describe('Typography', () => {
   it('Should render default typography', () => {
     const tree = renderer
-      .create(<Typography theme={theme}>Hello world !</Typography>)
+      .create(<Typography theme={theme}>Hello world :D</Typography>)
       .toJSON()
 
     expect(tree).toMatchSnapshot()
@@ -50,7 +50,7 @@ describe('Typography', () => {
                 type={type}
                 variant={variant}
               >
-                Hello world!
+                Hello world ;)
               </Typography>
             )
             .toJSON()

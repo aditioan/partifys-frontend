@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getContenders } from 'roles/host/reducers'
 import Contender from './Contender'
-import { SpotifyTrack } from 'helpers/propTypes'
+import { SpotifyTrack } from 'layout-components/propTypes'
 import { v4 as uuid} from 'uuid'
 
 const Wrapper = styled.div`

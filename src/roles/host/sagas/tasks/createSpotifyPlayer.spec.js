@@ -1,6 +1,7 @@
 import { select } from 'redux-saga/effects'
 import { getAccessToken } from 'roles/host/reducers'
 import createSpotifyPlayer from './createSpotifyPlayer'
+import { createClassInstance } from 'roles/host/sagas/util'
 
 class Player {
   addListener = jest.fn()

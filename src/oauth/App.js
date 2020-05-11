@@ -17,7 +17,6 @@ export default function App ({ history, location }) {
   }
 
   return <Redirect to={`/host?${qs.stringify(hostParams)}`} />
-
 }
 
 App.propTypes = {

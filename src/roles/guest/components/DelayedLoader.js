@@ -34,7 +34,7 @@ export default class DelayedLoader extends Component {
     )
   }
 
-  componentDidUnmount () {
+  componentWillUnmount () {
     if (this.timeout) {
       window.clearTimeout(this.timeout)
     }

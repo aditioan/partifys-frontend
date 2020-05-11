@@ -30,15 +30,6 @@ export default function SpotifyApiFactory ({ accessToken }) {
         return data
       }
     },
-    profile: {
-      async getData() {
-        const { data } = await axios.get(makeUrl(`/me`), {
-          headers: makeHeaders()
-        })
-
-        return data
-      }
-    },
     player: {
       async transferPlayback (deviceId) {
         await axios.put(

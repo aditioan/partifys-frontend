@@ -1,4 +1,4 @@
-import { formatName } from './formatName';
+import { formatPartyName } from 'helpers/partyName'
 
 const tests = [
   {
@@ -33,6 +33,6 @@ const tests = [
 
 tests.forEach(({ input, expected }) =>
   test(`Formats the party name (${input} => ${expected})`, () => {
-    expect(formatName(input)).toBe(expected)
+    expect(formatPartyName(input)).toBe(expected)
   })
 )

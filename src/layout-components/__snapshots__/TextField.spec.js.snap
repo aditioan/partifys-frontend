@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InputField Should render a filled InputField 1`] = `
+exports[`TextField Should render a filled Textfield 1`] = `
 .c0 {
   display: block;
   padding-top: 0.5rem;
@@ -14,7 +14,7 @@ exports[`InputField Should render a filled InputField 1`] = `
   padding-bottom: 0.5rem;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(0,0,0,0.25);
+  border-color: #eee;
   border-radius: 4px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -24,8 +24,9 @@ exports[`InputField Should render a filled InputField 1`] = `
   position: absolute;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  font-weight: lighter;
   left: 8px;
-  color: #bcbcbc;
+  color: #000;
   top: 0;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -33,6 +34,7 @@ exports[`InputField Should render a filled InputField 1`] = `
   font-size: 0.9rem;
   background: #fff;
   padding: 0 12px;
+  color: #000;
 }
 
 .c3 {
@@ -40,7 +42,8 @@ exports[`InputField Should render a filled InputField 1`] = `
   width: 100%;
   border: none;
   background: transparent;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
+  color: #fff;
   font-family: inherit;
   outline: none;
   padding: 0 8px;
@@ -73,7 +76,7 @@ exports[`InputField Should render a filled InputField 1`] = `
 </div>
 `;
 
-exports[`InputField Should render an empty Textfield 1`] = `
+exports[`TextField Should render an empty Textfield 1`] = `
 .c0 {
   display: block;
   padding-top: 0.5rem;
@@ -87,7 +90,7 @@ exports[`InputField Should render an empty Textfield 1`] = `
   padding-bottom: 0.5rem;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(0,0,0,0.25);
+  border-color: #eee;
   border-radius: 4px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -97,8 +100,9 @@ exports[`InputField Should render an empty Textfield 1`] = `
   position: absolute;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  font-weight: lighter;
   left: 8px;
-  color: #bcbcbc;
+  color: #000;
   top: 25%;
   font-size: inherit;
   background: transparent;
@@ -110,7 +114,8 @@ exports[`InputField Should render an empty Textfield 1`] = `
   width: 100%;
   border: none;
   background: transparent;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
+  color: #fff;
   font-family: inherit;
   outline: none;
   padding: 0 8px;
@@ -143,7 +148,7 @@ exports[`InputField Should render an empty Textfield 1`] = `
 </div>
 `;
 
-exports[`InputField Should render an empty text InputField by default 1`] = `
+exports[`TextField Should render an empty text TextField by default 1`] = `
 .c0 {
   display: block;
   padding-top: 0.5rem;
@@ -157,7 +162,7 @@ exports[`InputField Should render an empty text InputField by default 1`] = `
   padding-bottom: 0.5rem;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(0,0,0,0.25);
+  border-color: #eee;
   border-radius: 4px;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -167,8 +172,9 @@ exports[`InputField Should render an empty text InputField by default 1`] = `
   position: absolute;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  font-weight: lighter;
   left: 8px;
-  color: #bcbcbc;
+  color: #000;
   top: 25%;
   font-size: inherit;
   background: transparent;
@@ -180,7 +186,8 @@ exports[`InputField Should render an empty text InputField by default 1`] = `
   width: 100%;
   border: none;
   background: transparent;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
+  color: #fff;
   font-family: inherit;
   outline: none;
   padding: 0 8px;

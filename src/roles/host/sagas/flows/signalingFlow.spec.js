@@ -48,11 +48,6 @@ describe('signaling saga', () => {
     })
   })
 
-  // describe('onJoin', () => {
-  //   // TODO: This method is not testable. Refactor it!
-  //   expect(true).toBe(false)
-  // })
-
   describe('onAnswer', () => {
     const gen = cloneableGenerator(onAnswer)({
       remoteId: 'my user id',

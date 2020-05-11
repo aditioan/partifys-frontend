@@ -1,5 +1,5 @@
-import iceServers from 'network/iceServers'
-import createPeerSocket from 'network/createPeerSocket'
+import iceServers from 'helpers/iceServers'
+import createPeerSocket from 'helpers/createPeerSocket'
 
 export default function createSignaling (socket, onPeerConnected, onPartyOver) {
   let _connection
