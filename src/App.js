@@ -1,56 +1,177 @@
-import React, { Component } from 'react';
-import qs from 'querystring'
-import { ExternalLinkButton } from './layout-components/button';
-import TextField from './layout-components/text-field';
-import { formatName } from './layout-components/format-name';
-import styles from './app.module.css';
+import React, { Component } from "react";
+import { formatName } from "./layout-components/format-name";
+import { Redirect } from "react-router-dom";
+import LandingPage from "./components/LandingPage/LandingPage";
+import JoinParty from './components/Login/JoinParty';
+import Loading from "./components/Loading";
+import "react-awesome-button/dist/styles.css";
+import { Switch, Route, Link } from "react-router-dom";
+import Room from "./components/Room";
+import { Text, Box, Grommet, Header } from "grommet";
+import Login from "./components/Login/Login";
+import { AwesomeButton } from "react-awesome-button";
+const theme = {
+  global: {
+    font: {
+      family: "Roboto",
+      size: "18px",
+      height: "20px",
+    },
+  },
+};
 
 export default class App extends Component {
-  state = {
-    partyName: '',
-    partyCode: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      partyName: "",
+      partyCode: "",
+      isLoading: false,
+      isLoggedIn: false,
+    };
+    this.setLoggedInFlag = this.setLoggedInFlag.bind(this);
+    this.setLoadingflag = this.setLoadingflag.bind(this);
+    this.setPartyDetails = this.setPartyDetails.bind(this);
   }
+  // state = {
+  //   partyName: '',
+  //   partyCode: '',
+  //   loginflag:false
+  // }
+  componentDidMount() {
+    const newUrl = new URLSearchParams(window.location.search);
+    if (newUrl.has("code")) {
+      const code = newUrl.get("code");
+      const state = newUrl.get("state");
 
-  get partyUrl () {
-    return `/${this.state.partyName}/${this.state.partyCode}`
-  }
+      const token = {
+        code: code,
+        state: state,
+      };
 
-  get spotifyOauthUrl () {
-    const query = {
-      client_id: process.env.REACT_APP_CLIENT_ID,
-      response_type: 'token',
-      redirect_uri: process.env.REACT_APP_REDIRECT_URI,
-      state: qs.stringify({
-        party: this.state.partyName,
-        code: this.state.partyCode
-      }),
-      scope: 'streaming user-read-email user-read-private'
+      fetch("http://localhost:3001/room/", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(token),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          this.setState({ partyCode: data.roomNumber });
+          this.setState({ isLoggedIn: true });
+          // window.location = '/room'
+          //this.props.history.push("/room");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     }
-    console.log(process.env.REACT_APP_CLIENT_ID);
-    return `https://accounts.spotify.com/authorize?${qs.stringify(query)}`
   }
 
-  onPartyNameChange = partyName =>
-    this.setState({ partyName: formatName(partyName) })
+  componentDidUpdate() {}
+  async postToken(token) {
+    fetch("http://localhost:3001/room/", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(token),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        return data;
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
 
-  render() { 
+  setLoadingflag(val) {
+    this.setState({
+      isLoading: val,
+    });
+  }
+  setPartyDetails(val) {
+    this.setState({
+      partyCode: val.partyCode,
+      partyName: val.partyName,
+    });
+  }
+
+  setLoggedInFlag(val1, val2, room) {
+    this.setState({
+      isLoaggedIn: val1,
+      isLoading: val2,
+      partyCode: room,
+    });
+  }
+
+  get partyUrl() {
+    return `/${this.state.partyName}/${this.state.partyCode}`;
+  }
+
+  onPartyNameChange = (partyName) =>
+    this.setState({ partyName: formatName(partyName) });
+
+  render() {
     return (
-      <div className={styles.app}>
-        <div className={styles.home}>
-          <h1 className={styles.titleApp}>Partifys</h1>
+      // <div className={styles.app}>
+      //   {this.state.isLoading && !this.state.isLoaggedIn ? (
+      //     <Loading />
+      //   ) : this.state.isLoaggedIn && !this.state.isLoading ? (
+      //     <Home room={this.state.partyCode} />
+      //   ) : this.state.partyCode !== "" ? (
+      //     <JoinRoom room={roomDetails} />
+      //   ) : (
+      //     <LandingPage
+      //       loading={this.setLoadingflag}
+      //       loggedIn={this.setLoggedInFlag}
+      //       partyDetails={this.setPartyDetails}
+      //     />
+      //   )}
+      // </div>
 
-          <p className={styles.highlight}>A premium Spotify account is required to use Partifys</p>
-          
-          <TextField type="text" name="partycode" placeholder="Party code" />
-          <ExternalLinkButton variant='primary' href={`https://www.google.com/`}>
-            Join a party
-          </ExternalLinkButton>
+      <Grommet theme={theme}>
+        <Header background="#28302a" pad="small">
+          <Text size={"xxlarge"}>Partifys</Text>
+          <Box direction="row" gap="medium">
+            {!this.state.isLoggedIn && (
+              <Link to="/login">
+                <AwesomeButton type="primary">Create a party</AwesomeButton>
+              </Link>
+            )}
+            <Link to="/profile">
+              <AwesomeButton type="secondary">Profile</AwesomeButton>
+            </Link>
+          </Box>
+        </Header>
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/room">
+            <Room room={this.state.partyCode} />
+          </Route>
+          <Route path="/joindetails">
+            <JoinParty room={this.state.partyCode} />
+          </Route>
 
-          <ExternalLinkButton variant='secondary' href={this.spotifyOauthUrl}>
-            Create a party
-          </ExternalLinkButton>
-        </div>
-      </div>
+          <Route exact path="/">
+            <LandingPage
+              loading={this.setLoadingflag}
+              loggedIn={this.setLoggedInFlag}
+              partyDetails={this.setPartyDetails}
+            />
+          </Route>
+
+          <Route path="*">
+            {this.state.isLoggedIn ? <Redirect to="/room" /> : <Loading />}
+          </Route>
+        </Switch>
+      </Grommet>
     );
   }
 }
