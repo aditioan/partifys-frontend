@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getParty } from 'roles/host/reducers'
-import FullscreenButton from './FullscreenButton'
+import FullscreenButton from './FullScreenButton'
 
 const Outer = styled.header`
   position: relative;
