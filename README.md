@@ -8,7 +8,7 @@ Group project COMPSCI 732 Front-end repository
 4. Wei Lu (wlu702 / 778099429)
 
 ## Description
-This project was created for completing group project on COMPSCI 732 course, The University of Auckland. The frontend for party spotify aplication was created using React + Redux + Redux-Saga + Styled Components and socket.io.
+This project was created for completing group project on COMPSCI 732 course, The University of Auckland. The frontend for party spotify aplication was created using React + Redux + Redux-Saga + Styled Components and socket.io!
 
 ## Technologies
 - [Reactjs](https://reactjs.org/)
