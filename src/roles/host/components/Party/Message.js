@@ -57,7 +57,7 @@ function MessageDelegate ({ status }) {
 }
 
 MessageDelegate.propTypes = {
-  status: PropTypes.string.isRequired
+  status: PropTypes.string
 }
 
 export default connect(state => ({
