@@ -46,3 +46,22 @@
   
     color: rgba(255, 255, 255, 0.5)
   }
+
+  @media only screen and (max-width: 600px) {
+    .titleApp 
+      {
+      font-size: 70px;
+      width: 100%;
+    }
+    .highlight{
+      bottom: 50px;
+    }
+    /* .join,.create{
+      display: inline;
+      min-width: 50px;
+    }
+    .buttons{
+      text-align: center;
+      
+    } */
+  }

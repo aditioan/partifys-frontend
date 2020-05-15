@@ -39,6 +39,11 @@ export const Button = styled.button`
   cursor: pointer;
   min-width: 150px;
 
+  @media only screen and (max-width: 600px){
+    margin-top : 5px
+
+  }
+
   ${({ variant }) => typeThemes[variant]}
 `
 
