@@ -4,13 +4,17 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getArtistsAsHumanFormat } from 'helpers/tracks'
 import Typography from 'layout-components/Typography'
+import { Button } from 'layout-components/Button'
+import * as actions from 'roles/host/actions/player'
 import {
   getCurrentTrack,
   getCurrentAlbum,
   getCurrentArtists,
-  getProgress
+  getProgress,
+  isPlaying
 } from 'roles/host/reducers'
 import { Container } from './components'
+import { bindActionCreators } from 'redux'
 
 const Outer = styled(Container)`
   position: relative;
@@ -38,6 +42,25 @@ const Progress = styled.div`
   transition: width .2s ease;
 `
 
+const PlayButton = connect(null, dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+}))(({ actions }) => (
+  <Button variant='primary' onClick={actions.resumeTrack}>
+    Resume
+  </Button>
+))
+
+const PauseButton = connect(null, dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+}))(({ actions }) => (
+  
+  <Button variant='primary' onClick={actions.pauseTrack}>
+    Pause
+  </Button>
+))
+
+const PlayPauseButton = isPlaying ? <PauseButton /> : <PlayButton />
+
 function Player ({ track, album, artists, progress }) {
   return (
     <Outer>
@@ -48,6 +71,10 @@ function Player ({ track, album, artists, progress }) {
         <Typography reverse type='secondary'>
           {getArtistsAsHumanFormat({ artists })}
         </Typography>
+      </div>
+      <div>
+        <PlayButton />
+        <PauseButton />
       </div>
     </Outer>
   )
