@@ -2,6 +2,7 @@ export const UPDATE_PLAYER_STATE = 'UPDATE_PLAYER_STATE'
 export const PLAY_TRACK = 'PLAY_TRACK'
 export const PAUSE_TRACK = 'PAUSE_TRACK'
 export const RESUME_TRACK = 'RESUME_TRACK'
+export const SKIP_TRACK = 'SKIP_TRACK'
 
 export const updatePlayerState = state => ({
   type: UPDATE_PLAYER_STATE,
@@ -20,4 +21,9 @@ export const resumeTrack = track => ({
 
 export const pauseTrack = () => ({
   type: PAUSE_TRACK
+})
+
+export const skipTrack = track => ({
+  type: SKIP_TRACK,
+  track
 })
