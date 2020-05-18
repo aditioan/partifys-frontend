@@ -92,9 +92,13 @@ export function * pauseSpotify (player) {
 
 export function * skipSpotify (player) {
   const contenders = yield select(getContenders)
-  yield put(addToPrevious(contenders, contenders[0].id))
+  if (contenders.length < 1){
+    return
+  }
+  const track = [contenders[0]]
+  yield put(addToPrevious(track, contenders[0].id))
   yield call(skipTrack, contenders[0].uri, player._options.id)
-  
+
   const nextContenders = yield select(getNextContenders)    
   for (const contender of nextContenders) {
     yield put(addToBattle(contender))

@@ -15,6 +15,10 @@ import {
 } from 'roles/host/reducers'
 import { Container } from './components'
 import { bindActionCreators } from 'redux'
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import PauseIcon from '@material-ui/icons/Pause';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import { green } from '@material-ui/core/colors';
 
 const Outer = styled(Container)`
   position: relative;
@@ -53,25 +57,25 @@ const Progress = styled.div`
 const PlayButton = connect(null, dispatch => ({
   actions: bindActionCreators(actions, dispatch)
 }))(({ actions }) => (
-  <Button variant='primary' onClick={actions.resumeTrack}>
-    Resume
-  </Button>
+  <div variant='primary' onClick={actions.resumeTrack}>
+    <PlayArrowIcon style={{ fontSize: 40, color: green[500] }} />
+  </div>
 ))
 
 const PauseButton = connect(null, dispatch => ({
   actions: bindActionCreators(actions, dispatch)
 }))(({ actions }) => (
-  <Button variant='primary' onClick={actions.pauseTrack}>
-    Pause
-  </Button>
+  <div variant='primary' onClick={actions.pauseTrack}>
+    <PauseIcon style={{ fontSize: 40, color: green[500] }} />
+  </div>
 ))
 
 const SkipButton = connect(null, dispatch => ({
   actions: bindActionCreators(actions, dispatch)
 }))(({ actions }) => (
-  <Button variant='primary' onClick={actions.skipTrack}>
-    Skip
-  </Button>
+  <div variant='primary' onClick={actions.skipTrack}>
+    <SkipNextIcon style={{ fontSize: 40, color: green[500] }}/>
+  </div>
 ))
 
 const PlayPauseButton = isPlaying ? <PauseButton /> : <PlayButton />
