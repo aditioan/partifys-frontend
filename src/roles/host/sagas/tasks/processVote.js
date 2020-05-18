@@ -41,7 +41,7 @@ export default function * processVote () {
         ? contender1
         : contender2
     }
-
+    console.log(winner);
     yield put(playTrack(winner))
 
     yield put(addToPrevious(contenders, winner.id))
