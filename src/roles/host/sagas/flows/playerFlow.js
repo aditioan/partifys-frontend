@@ -1,15 +1,23 @@
 import { eventChannel } from 'redux-saga'
 import { call, fork, put, select, take, takeEvery } from 'redux-saga/effects'
-import { isPlayerAvailable, getPosition, getDuration } from 'roles/host/reducers'
+import { isPlayerAvailable, getPosition, getDuration, getCurrentTrack, getNextContenders, getContenders } from 'roles/host/reducers'
 import {
   PLAY_TRACK,
+  RESUME_TRACK,
+  PAUSE_TRACK,
+  SKIP_TRACK,
   UPDATE_PLAYER_STATE,
   updatePlayerState
 } from 'roles/host/actions/player'
 import injectPlaybackSdk from 'roles/host/sagas/tasks/spotify/injectPlaybackSdk'
 import createSpotifyPlayer from 'roles/host/sagas/tasks/createSpotifyPlayer'
 import playTrack from 'roles/host/sagas/tasks/spotify/playTrack'
+import resumeTrack from 'roles/host/sagas/tasks/spotify/resumeTrack'
+import pauseTrack from 'roles/host/sagas/tasks/spotify/pauseTrack'
+import skipTrack from 'roles/host/sagas/tasks/spotify/skipTrack'
 import { startProcessVote } from 'roles/host/actions/tracks'
+import notifyBattleUpdate from 'roles/host/sagas/tasks/notifyBattleUpdate'
+import { addToBattle, addToPrevious } from 'roles/host/actions/tracks'
 
 const delay = ms => new Promise(resolve => window.setTimeout(resolve, ms))
 
@@ -42,8 +50,60 @@ export function * watchPlayerProgress () {
   }
 }
 
+export const getTrack = (state) => getCurrentTrack(state);
+
+export const getNextSong = (state) => {
+  console.log(state.tracks)
+  let firstTrack = state.tracks.next[0]
+  let secondTrack = state.tracks.next[1]
+  let winner = null;
+  if (secondTrack.votes.length > firstTrack.votes.length){
+    winner = secondTrack;
+  }else{
+    winner = firstTrack;
+  }
+  console.log(winner);
+  return winner;
+}
+
 export function * playTrackToSpotify (player, action) {
+  console.log(player._options.id)
   yield call(playTrack, action.track.uri, player._options.id)
+}
+
+export function * resumeSpotify (player, action) {
+  let track = yield select(getTrack);
+  console.log(track);
+  yield call(resumeTrack, track.uri, player._options.id)
+}
+
+export function * pauseSpotify (player) {
+  console.log("Pause spotify called")
+  yield call(pauseTrack, player._options.id)
+}
+
+// export function * skipSpotify (player) {
+//   let nextSong = yield select(getNextSong);
+//   if (nextSong != null){
+//     yield call(skipTrack, nextSong.uri, player._options.id)
+//     yield call(notifyBattleUpdate)
+//   }
+// }
+
+export function * skipSpotify (player) {
+  const contenders = yield select(getContenders)
+  if (contenders.length < 1){
+    return
+  }
+  const track = [contenders[0]]
+  yield put(addToPrevious(track, contenders[0].id))
+  yield call(skipTrack, contenders[0].uri, player._options.id)
+
+  const nextContenders = yield select(getNextContenders)    
+  for (const contender of nextContenders) {
+    yield put(addToBattle(contender))
+  }    
+  yield call(notifyBattleUpdate)
 }
 
 export function fetchPlayerState (player) {
@@ -79,4 +139,8 @@ export default function * root () {
   yield fork(watchPlayerProgress)
 
   yield takeEvery(PLAY_TRACK, playTrackToSpotify, player)
+  yield takeEvery(RESUME_TRACK, resumeSpotify, player)
+  yield takeEvery(PAUSE_TRACK, pauseSpotify, player)
+  yield takeEvery(SKIP_TRACK, skipSpotify, player)
+
 }

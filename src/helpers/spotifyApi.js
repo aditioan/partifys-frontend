@@ -67,6 +67,41 @@ export default function SpotifyApiFactory ({ accessToken }) {
             headers: makeHeaders()
           }
         )
+      },
+      async pause (deviceId) {
+        
+        const options = {}
+
+        if (deviceId) {
+          options.device_id = deviceId
+        }
+        console.log("Options: " + options)
+        await axios.put(
+          makeUrl(`/me/player/pause?${qs.stringify(deviceId)}`),
+          {
+          },
+          {
+            headers: makeHeaders()
+          }
+        )
+      },
+      async resume (trackUri, deviceId) {
+        
+        const options = {}
+
+        if (deviceId) {
+          options.device_id = deviceId
+        }
+
+        await axios.put(
+          makeUrl(`/me/player/play?${qs.stringify(options)}`),
+          {
+            uri: [trackUri],
+          },
+          {
+            headers: makeHeaders()
+          }
+        )
       }
     }
   }
