@@ -19,6 +19,11 @@ export const CardActions = styled.div`
   > * + * {
     margin-left: 8px;
   }
+
+  @media only screen and (max-width: 600px){
+    text-align: center;
+
+  }
 `
 
 export default Card
