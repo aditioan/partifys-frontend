@@ -13,6 +13,7 @@ import Battle from 'roles/guest/components/Battle'
 import UserModal from 'roles/guest/components/UserModal'
 import InvalidPasscodeScreen from 'roles/guest/components/InvalidPasscodeScreen'
 import PartyOverScreen from 'roles/guest/components/PartyOverScreen'
+import ChatWindow from "./Chat";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -26,7 +27,8 @@ class Home extends Component {
   static propTypes = {
     api: PropTypes.shape({
       status: PropTypes.string.isRequired,
-      rename: PropTypes.func.isRequired
+      rename: PropTypes.func.isRequired,
+      name : PropTypes.string.isRequired
     }).isRequired
   }
 
@@ -42,8 +44,10 @@ class Home extends Component {
     this._hideUserModal()
     this.props.api.rename(username)
   }
+  
 
   render () {
+    
     if (this.props.api.status === STATUS_ERROR) {
       return <InvalidPasscodeScreen />
     } else if (this.props.api.status === STATUS_PARTY_OVER) {
@@ -51,9 +55,11 @@ class Home extends Component {
     } else if (this.props.api.status !== STATUS_READY) {
       return <LoadingScreen />
     }
-
+    
     return (
+      
       <Wrapper>
+        <ChatWindow party={this.props.api.party} name={this.props.api.name}/>
         <SearchBar onProfileClick={this._showUserModal} />
         <Battle />
 

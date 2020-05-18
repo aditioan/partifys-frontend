@@ -4,13 +4,21 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getArtistsAsHumanFormat } from 'helpers/tracks'
 import Typography from 'layout-components/Typography'
+// import { Button } from 'layout-components/Button'
+import * as actions from 'roles/host/actions/player'
 import {
   getCurrentTrack,
   getCurrentAlbum,
   getCurrentArtists,
-  getProgress
+  getProgress,
+  // isPlaying
 } from 'roles/host/reducers'
 import { Container } from './components'
+import { bindActionCreators } from 'redux'
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import PauseIcon from '@material-ui/icons/Pause';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import { green } from '@material-ui/core/colors';
 
 const Outer = styled(Container)`
   position: relative;
@@ -21,6 +29,14 @@ const Outer = styled(Container)`
 
   padding: 12px;
   width: 100%;
+`
+
+const ControlButtons = styled(Container)`
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const Cover = styled.img`
@@ -38,18 +54,51 @@ const Progress = styled.div`
   transition: width .2s ease;
 `
 
+const PlayButton = connect(null, dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+}))(({ actions }) => (
+  <div variant='primary' onClick={actions.resumeTrack}>
+    <PlayArrowIcon style={{ fontSize: 40, color: green[500] }} />
+  </div>
+))
+
+const PauseButton = connect(null, dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+}))(({ actions }) => (
+  <div variant='primary' onClick={actions.pauseTrack}>
+    <PauseIcon style={{ fontSize: 40, color: green[500] }} />
+  </div>
+))
+
+const SkipButton = connect(null, dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+}))(({ actions }) => (
+  <div variant='primary' onClick={actions.skipTrack}>
+    <SkipNextIcon style={{ fontSize: 40, color: green[500] }}/>
+  </div>
+))
+
+// const PlayPauseButton = isPlaying ? <PauseButton /> : <PlayButton />
+
 function Player ({ track, album, artists, progress }) {
   return (
-    <Outer>
-      <Progress style={{ width: `${progress * 100}%` }} />
-      <Cover src={album.cover} alt={`Album cover for "${album.name}"`} />
-      <div>
-        <Typography reverse>{track.name}</Typography>
-        <Typography reverse type='secondary'>
-          {getArtistsAsHumanFormat({ artists })}
-        </Typography>
+    <div>
+      <Outer>
+        <Progress style={{ width: `${progress * 100}%` }} />
+        <Cover src={album.cover} alt={`Album cover for "${album.name}"`} />
+        <div>
+          <Typography reverse>{track.name}</Typography>
+          <Typography reverse type='secondary'>
+            {getArtistsAsHumanFormat({ artists })}
+          </Typography>
+        </div>
+      </Outer>
+      <ControlButtons>
+        <PlayButton />
+        <PauseButton />
+        <SkipButton />
+      </ControlButtons>
       </div>
-    </Outer>
   )
 }
 

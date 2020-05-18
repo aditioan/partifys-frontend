@@ -65,12 +65,21 @@ const Input = styled.input`
   border: none;
   background: transparent;
   font-size: 1.5rem;
-  color: #fff;
   font-family: inherit;
   
   outline: none;
   padding: 0 8px;
+
+  ${({ variant }) => typeThemes[variant]}
 `
+
+Input.propTypes = {
+  variant: PropTypes.oneOf(['primary', 'secondary'])
+}
+
+Input.defaultProps = {
+  variant: 'primary'
+}
 
 export default class TextField extends Component {
   static propTypes = {
@@ -112,6 +121,7 @@ export default class TextField extends Component {
             onChange={e => this.props.onChange(e.target.value)}
             onFocus={() => this.setState({ isFocused: true })}
             onBlur={() => this.setState({ isFocused: false })}
+            variant={this.props.variant}
           />
         </Inner>
       </Wrapper>
