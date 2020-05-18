@@ -4,14 +4,14 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getArtistsAsHumanFormat } from 'helpers/tracks'
 import Typography from 'layout-components/Typography'
-import { Button } from 'layout-components/Button'
+// import { Button } from 'layout-components/Button'
 import * as actions from 'roles/host/actions/player'
 import {
   getCurrentTrack,
   getCurrentAlbum,
   getCurrentArtists,
   getProgress,
-  isPlaying
+  // isPlaying
 } from 'roles/host/reducers'
 import { Container } from './components'
 import { bindActionCreators } from 'redux'
@@ -78,7 +78,7 @@ const SkipButton = connect(null, dispatch => ({
   </div>
 ))
 
-const PlayPauseButton = isPlaying ? <PauseButton /> : <PlayButton />
+// const PlayPauseButton = isPlaying ? <PauseButton /> : <PlayButton />
 
 function Player ({ track, album, artists, progress }) {
   return (
