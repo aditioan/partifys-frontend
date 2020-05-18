@@ -29,7 +29,8 @@ export class ApiProvider extends Component {
       searchTracks: this.searchTracks,
       submitTrack: this.submitTrack,
       vote: this.vote,
-      rename: this.rename
+      rename: this.rename,
+      name : 'Anonymous'
     }
     this.emitQueue = []
 
@@ -97,8 +98,10 @@ export class ApiProvider extends Component {
 
   vote = trackId => this.safeEmit('battle/vote', { trackId })
 
-  rename = username => this.safeEmit('guest/rename', { username })
-
+  rename = username =>{
+    this.setState({name:username})
+    this.safeEmit('guest/rename', { username })}
+  
   safeEmit = (...args) => {
     if (this._connection.status === 'closed') {
       this.emitQueue.push(args)

@@ -10,6 +10,7 @@ import Contenders from './Contenders'
 import Message from './Message'
 import Queue from './Queue'
 import VoteReactions from './VoteReactions'
+import ChatWindow from "./Chat";
 
 const Wrapper = styled.div`
   flex: 1;
@@ -33,6 +34,7 @@ function Party () {
   return (
     <Wrapper>
       <Background />
+      <ChatWindow/>
       <Main>
         <Contenders />
         <Message />
@@ -43,13 +45,14 @@ function Party () {
   )
 }
 
-function PartyDelegate ({ isLocked, isOver }) {
+function PartyDelegate ({ isLocked, isOver, party }) {
+  
   if (isLocked) {
     return <PartyLocked />
   } else if (isOver) {
     return <PartyOver />
   } else {
-    return <Party />
+    return <Party party={party}/>
   }
 }
 
@@ -60,5 +63,5 @@ PartyDelegate.propTypes = {
 
 export default connect(state => ({
   isLocked: isPartyLocked(state),
-  isOver: isPartyOver(state)
+  isOver: isPartyOver(state),
 }))(PartyDelegate)

@@ -65,7 +65,7 @@ const Input = styled.input`
   border: none;
   background: transparent;
   font-size: 1.5rem;
-  color: #fff;
+  color: black;
   font-family: inherit;
   
   outline: none;
