@@ -15,14 +15,10 @@ export const CardContent = styled.div`
 export const CardActions = styled.div`
   text-align: right;
   padding: 24px 0;
+  text-align: center;
 
   > * + * {
     margin-left: 8px;
-  }
-
-  @media only screen and (max-width: 600px){
-    text-align: center;
-
   }
 `
 
