@@ -6,7 +6,7 @@ import TextField from 'layout-components/TextField'
 import { ExternalLinkButton, LinkButton } from 'layout-components/Button'
 import { formatPartyName } from 'helpers/partyName'
 import styles from './app.module.css'
-import ErrorModal from "./ErrorModal";
+import ErrorModal from "layout-components/ErrorModal";
 
 const Outer = styled.div`
   min-height: 35vh;

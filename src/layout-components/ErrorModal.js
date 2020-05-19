@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Card, { CardContent, CardActions } from 'layout-components/Card'
-import { Button } from 'layout-components/Button'
+import Card, { CardContent, CardActions } from './Card'
+import { Button } from './Button'
 
 const Outer = styled.div`
   position: fixed;
@@ -27,9 +27,11 @@ export default class ErrorModal extends Component {
       <Outer>
         <Card>
           <CardContent>
-            <p>Make sure all input is not empty!</p>
+            <p>Make sure all inputs are not empty!</p>
           </CardContent>
-          <CardActions><Button onClick={this.props.onDismiss}>Cancel</Button></CardActions>
+          <CardActions>
+            <Button variant='primary' onClick={this.props.onDismiss}>Cancel</Button>
+          </CardActions>
         </Card>
       </Outer>
     )
