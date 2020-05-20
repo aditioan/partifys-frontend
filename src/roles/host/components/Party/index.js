@@ -11,6 +11,7 @@ import Message from './Message'
 import Queue from './Queue'
 import VoteReactions from './VoteReactions'
 import ChatWindow from "./Chat";
+import SearchBar from './SearchBar'
 
 const Wrapper = styled.div`
   flex: 1;
@@ -36,6 +37,7 @@ function Party () {
       <Background />
       <ChatWindow/>
       <Main>
+        <SearchBar />
         <Contenders />
         <Message />
         <VoteReactions />

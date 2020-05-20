@@ -6,6 +6,7 @@ import createStore from 'roles/host/createStore'
 import Header from 'roles/host/components/Header'
 import Party from 'roles/host/components/Party'
 import Player from 'roles/host/components/Player'
+import { ApiProvider } from 'roles/host/components/Party/providers/ApiProvider'
 
 const Wrapper = styled.div`
   display: flex;
@@ -39,9 +40,11 @@ export default class Host extends Component {
     return (
       <Provider store={this.store}>
         <Wrapper>
-          <Header />
-          <Party />
-          <Player />
+          <ApiProvider party={this.props.party} code={this.props.code}>
+            <Header />
+            <Party />
+            <Player />
+          </ApiProvider>
         </Wrapper>
       </Provider>
     )
