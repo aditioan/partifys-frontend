@@ -11,6 +11,7 @@ import Message from './Message'
 import Queue from './Queue'
 import VoteReactions from './VoteReactions'
 import ChatWindow from "./Chat";
+import Guests from './Guests'
 
 const Wrapper = styled.div`
   flex: 1;
@@ -35,6 +36,7 @@ function Party () {
     <Wrapper>
       <Background />
       <ChatWindow/>
+      <Guests/>
       <Main>
         <Contenders />
         <Message />
