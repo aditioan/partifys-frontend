@@ -11,6 +11,7 @@ import Message from './Message'
 import Queue from './Queue'
 import VoteReactions from './VoteReactions'
 import ChatWindow from "./Chat";
+import Guests from './Guests'
 import SearchBar from './SearchBar'
 
 const Wrapper = styled.div`
@@ -36,6 +37,7 @@ function Party () {
     <Wrapper>
       <Background />
       <ChatWindow/>
+      <Guests/>
       <Main>
         <SearchBar />
         <Contenders />
