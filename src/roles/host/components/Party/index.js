@@ -37,9 +37,9 @@ function Party () {
     <Wrapper>
       <Background />
       <ChatWindow/>
-      <Guests/>
       <Main>
         <SearchBar />
+        <Guests/>
         <Contenders />
         <Message />
         <VoteReactions />
