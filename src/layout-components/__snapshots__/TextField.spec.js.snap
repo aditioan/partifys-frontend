@@ -43,10 +43,10 @@ exports[`TextField Should render a filled Textfield 1`] = `
   border: none;
   background: transparent;
   font-size: 1.5rem;
-  color: #fff;
   font-family: inherit;
   outline: none;
   padding: 0 8px;
+  color: #000;
 }
 
 <div
@@ -115,10 +115,10 @@ exports[`TextField Should render an empty Textfield 1`] = `
   border: none;
   background: transparent;
   font-size: 1.5rem;
-  color: #fff;
   font-family: inherit;
   outline: none;
   padding: 0 8px;
+  color: #000;
 }
 
 <div
@@ -187,10 +187,10 @@ exports[`TextField Should render an empty text TextField by default 1`] = `
   border: none;
   background: transparent;
   font-size: 1.5rem;
-  color: #fff;
   font-family: inherit;
   outline: none;
   padding: 0 8px;
+  color: #000;
 }
 
 <div
