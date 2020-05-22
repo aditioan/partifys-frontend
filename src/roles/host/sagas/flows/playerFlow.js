@@ -52,20 +52,6 @@ export function * watchPlayerProgress () {
 
 export const getTrack = (state) => getCurrentTrack(state);
 
-export const getNextSong = (state) => {
-  console.log(state.tracks)
-  let firstTrack = state.tracks.next[0]
-  let secondTrack = state.tracks.next[1]
-  let winner = null;
-  if (secondTrack.votes.length > firstTrack.votes.length){
-    winner = secondTrack;
-  }else{
-    winner = firstTrack;
-  }
-  console.log(winner);
-  return winner;
-}
-
 export function * playTrackToSpotify (player, action) {
   console.log(player._options.id)
   yield call(playTrack, action.track.uri, player._options.id)
@@ -82,14 +68,6 @@ export function * pauseSpotify (player) {
   yield call(pauseTrack, player._options.id)
 }
 
-// export function * skipSpotify (player) {
-//   let nextSong = yield select(getNextSong);
-//   if (nextSong != null){
-//     yield call(skipTrack, nextSong.uri, player._options.id)
-//     yield call(notifyBattleUpdate)
-//   }
-// }
-
 export function * skipSpotify (player) {
   const contenders = yield select(getContenders)
   if (contenders.length < 1){
@@ -99,10 +77,12 @@ export function * skipSpotify (player) {
   yield put(addToPrevious(track, contenders[0].id))
   yield call(skipTrack, contenders[0].uri, player._options.id)
 
-  const nextContenders = yield select(getNextContenders)    
-  for (const contender of nextContenders) {
-    yield put(addToBattle(contender))
-  }    
+  const nextContenders = yield select(getNextContenders)
+  if (nextContenders.length < 1){
+    yield call(notifyBattleUpdate)
+    return
+  }
+  yield put(addToBattle(nextContenders[0])) 
   yield call(notifyBattleUpdate)
 }
 
