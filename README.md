@@ -1,5 +1,9 @@
-# partifys-frontend
+[![Build Status](https://travis-ci.com/aditioan/partifys-frontend.svg?branch=master)](https://travis-ci.com/aditioan/partifys-frontend.svg?branch=master) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+# PARTIFYS PROJECT
 Group project COMPSCI 732 Front-end repository
+
+![screenshot](./public/group_project.png)
 
 ## Members
 1. Aditio Agung Nugroho (anug012 / 791804575)
@@ -8,7 +12,19 @@ Group project COMPSCI 732 Front-end repository
 4. Wei Lu (wlu702 / 778099429)
 
 ## Description
-This project was created for completing group project on COMPSCI 732 course, The University of Auckland. The frontend for party spotify aplication was created using React + Redux + Redux-Saga + Styled Components and socket.io!
+This project was created for completing group project on COMPSCI 732 course, The University of Auckland. We utilize Spotify open API to create a website to host “Party Playlist” using Spotify premium account. The users must have a Spotify premium account to create the room. The frontend for party spotify aplication was created using React + Redux + Redux-Saga + Styled Components and socket.io!
+
+## Main Features
+- Users can log in using their Spotify account (Premium account). 
+- Users can create a “room” using name and code. 
+- Users can share this room with friends using the party name + code or QR scan. 
+- Users who enter the room can search and add songs to the room’s playlist. 
+- Guests who enter the room can add the song and vote between two songs in the playlist to determine the which one that will be played. 
+- Users who have entered the room can chat with each other.
+
+## Documentation
+- [Project Meeting & Task breakdown](https://share.nuclino.com/p/Partifys-Meeting-Minutes-Bronze-Bear-PDraCqJpRPWNCj8_Sdny3z)
+- [Partifys Tutorial](https://share.nuclino.com/p/Partifys-Tutorial-Bronze-Bear-T3vQlNFx-vqwT7_pyoEoao)
 
 ## Technologies
 - [Reactjs](https://reactjs.org/)
@@ -28,11 +44,18 @@ nano .env.sample
 # Install dependencies
 npm install
 
-# Run unit tests in watch mode
-npm test -- --watch
+# Run unit tests
+npm run test
 
 # Run the server
 npm run start
+```
+
+## Account for test
+Use this account for testing purpose if you don't have spotify premium account. (Please be considerate while using this account)
+```sh
+username: uaditioa
+passowrd: aditio1993
 ```
 
 ## Creating the environment file
