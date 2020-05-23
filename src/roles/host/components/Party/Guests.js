@@ -24,6 +24,7 @@ function Guests({guests}) {
     return (
         <div className={classes.root}>
         {guests.map(function(value) {
+                if(value.isConnected){
                 const name = value.name.split('-')[0]
                 if(name==='Anonymous'){
                     return <Tooltip title={name}><Avatar><EmojiPeople/></Avatar></Tooltip>
@@ -31,6 +32,7 @@ function Guests({guests}) {
                 else{
                 return <Tooltip title={name}><Avatar>{name.charAt(0)}</Avatar></Tooltip>
                 }
+              }
             })}
             
       </div>
