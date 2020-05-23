@@ -1,7 +1,8 @@
 [![Build Status](https://travis-ci.com/aditioan/partifys-frontend.svg?branch=master)](https://travis-ci.com/aditioan/partifys-frontend.svg?branch=master) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # PARTIFYS PROJECT
-Group project COMPSCI 732 Front-end repository
+#### [https://partifys.now.sh/](https://partifys.now.sh/)
+Group project COMPSCI 732 Front-end repository 
 
 ![screenshot](./public/group_project.png)
 
@@ -54,10 +55,10 @@ nano .env.sample
 npm install
 
 # Run unit tests
-npm run test
+npm test
 
-# Run the server
-npm run start
+# Run the project
+npm start
 ```
 
 ## Creating the environment file
