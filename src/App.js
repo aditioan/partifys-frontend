@@ -3,6 +3,7 @@ import React, { Component, Suspense, lazy } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import theme from './layout-components/theme'
+import InvalidAccount from './oauth/invalidAccount'
 
 const getQueryParams = search => qs.parse(search.substr(1))
 
@@ -45,6 +46,7 @@ class App extends Component {
                 return <GuestApp {...props} />
               }}
             />
+            <Route path='/invalidAccount' component={InvalidAccount} />
             <Redirect from='/' to='/home' />
           </Switch>
           </Suspense>

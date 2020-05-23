@@ -27,13 +27,14 @@ const FailedIcon = styled(MdClear)`
   opacity: .25;
 `
 
-export default function InvalidPasscodeScreen () {
+export default function InvalidAccount () {
   return (
     <Outer>
       <FailedIcon />
       <Typography reverse variant='display1'>Oopsie!</Typography>
       <Typography reverse>
-        It looks like you entered the wrong pass code.
+        It looks like this spotify account is not a premium account.
+        Please use a spotify premium account to log in.
       </Typography>
       <LinkButton to='/home'>Take me back home</LinkButton>
     </Outer>
