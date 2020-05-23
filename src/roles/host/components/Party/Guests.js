@@ -27,12 +27,13 @@ function Guests({guests}) {
                 if(value.isConnected){
                 const name = value.name.split('-')[0]
                 if(name==='Anonymous'){
-                    return <Tooltip title={name}><Avatar><EmojiPeople/></Avatar></Tooltip>
+                    return <Tooltip title={name} key={value.id}><Avatar><EmojiPeople/></Avatar></Tooltip>
                 }
                 else{
-                return <Tooltip title={name}><Avatar>{name.charAt(0)}</Avatar></Tooltip>
+                return <Tooltip title={name} key={value.id}><Avatar>{name.charAt(0)}</Avatar></Tooltip>
                 }
               }
+              return false;
             })}
             
       </div>

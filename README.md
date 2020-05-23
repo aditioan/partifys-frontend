@@ -23,7 +23,8 @@ This project was created for completing group project on COMPSCI 732 course, The
 - Users who have entered the room can chat with each other.
 
 ## Documentation
-- [Project Meeting & Task breakdown](https://share.nuclino.com/p/Partifys-Meeting-Minutes-Bronze-Bear-PDraCqJpRPWNCj8_Sdny3z)
+- [Project Meeting Minutes](https://share.nuclino.com/p/Partifys-Meeting-Minutes-Bronze-Bear-PDraCqJpRPWNCj8_Sdny3z)
+- [Task Breakdown](https://share.nuclino.com/p/Task-Breakdown-Bronze-Bear-4ooamYE02NkzOKrF760y5d)
 - [Partifys Tutorial](https://share.nuclino.com/p/Partifys-Tutorial-Bronze-Bear-T3vQlNFx-vqwT7_pyoEoao)
 
 ## Technologies
@@ -33,12 +34,20 @@ This project was created for completing group project on COMPSCI 732 course, The
 - [Redux-Saga](https://redux-saga.js.org/)
 - [Socket IO](https://socket.io/)
 
+## Account for test
+Use this account for testing purpose if you don't have spotify premium account. (Please be considerate while using this account)
+```sh
+username: uaditioa
+passowrd: aditio1993
+```
+
 ## How to run
 ```sh
 # Create your environment file
 cp .env.sample .env
 
-# Replace the placeholder values with your environment values (see next section)
+# You can use our spotify client ID and environtment setting by default. 
+# However, you can replace the placeholder values with your environment values (see next section)
 nano .env.sample
 
 # Install dependencies
@@ -49,13 +58,6 @@ npm run test
 
 # Run the server
 npm run start
-```
-
-## Account for test
-Use this account for testing purpose if you don't have spotify premium account. (Please be considerate while using this account)
-```sh
-username: uaditioa
-passowrd: aditio1993
 ```
 
 ## Creating the environment file
