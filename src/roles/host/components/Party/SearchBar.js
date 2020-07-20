@@ -100,7 +100,6 @@ class SearchBar extends Component {
     return (
       <Outer>
         <Nav>
-          <ProfileIcon onClick={this.props.onProfileClick} />
           <SearchInput
             value={this.state.search}
             onChange={this.onSearchChange}
