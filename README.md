@@ -35,13 +35,6 @@ This project was created for completing group project on COMPSCI 732 course, The
 - [Redux-Saga](https://redux-saga.js.org/)
 - [Socket IO](https://socket.io/)
 
-## Account for test
-Use this account for testing purpose if you don't have spotify premium account. (Please be considerate while using this account)
-```sh
-username: uaditioa
-passowrd: aditio1993
-```
-
 ## How to run
 ```sh
 # Create your environment file
